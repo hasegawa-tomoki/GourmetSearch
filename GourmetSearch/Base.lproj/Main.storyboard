@@ -107,6 +107,114 @@
             </objects>
             <point key="canvasLocation" x="336" y="481"/>
         </scene>
+        <!--写真-->
+        <scene sceneID="i8q-J9-Qk3">
+            <objects>
+                <navigationController id="EyM-cb-E2A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="写真" image="tabbar-photo" id="nXX-Yd-FoP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hId-ul-Uu9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aQx-ef-1Bh" kind="relationship" relationship="rootViewController" id="ekw-dq-Myq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xlF-t2-nnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="336" y="1173"/>
+        </scene>
+        <!--写真一覧-->
+        <scene sceneID="6lX-wx-iQJ">
+            <objects>
+                <viewController id="aQx-ef-1Bh" customClass="PhotoListViewController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hC1-bZ-wJV"/>
+                        <viewControllerLayoutGuide type="bottom" id="UUu-pb-nll"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lhC-1y-bwK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jYf-SF-j3f">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="13G-lb-dCa">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoListItem" id="8LC-UP-LhK" customClass="PhotoListItemCollectionViewCell" customModule="GourmetSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O0e-Nd-nX6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="O0e-Nd-nX6" firstAttribute="leading" secondItem="8LC-UP-LhK" secondAttribute="leading" id="0pg-fQ-4O3"/>
+                                            <constraint firstAttribute="bottom" secondItem="O0e-Nd-nX6" secondAttribute="bottom" id="DBy-b8-k14"/>
+                                            <constraint firstItem="O0e-Nd-nX6" firstAttribute="top" secondItem="8LC-UP-LhK" secondAttribute="top" id="Hys-uv-D3O"/>
+                                            <constraint firstAttribute="trailing" secondItem="O0e-Nd-nX6" secondAttribute="trailing" id="rLV-DX-rM5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="photo" destination="O0e-Nd-nX6" id="ymO-cr-zcF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoListHeader" id="S5F-s6-Ou9" customClass="PhotoListItemCollectionViewHeader" customModule="GourmetSearch" customModuleProvider="target">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTe-Lj-49W">
+                                            <rect key="frame" x="8" y="14" width="584" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="dQe-qJ-Rrf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="nTe-Lj-49W" secondAttribute="trailing" constant="8" id="27H-zs-UOf"/>
+                                        <constraint firstAttribute="centerY" secondItem="nTe-Lj-49W" secondAttribute="centerY" id="4Yk-yK-rCe"/>
+                                        <constraint firstItem="nTe-Lj-49W" firstAttribute="leading" secondItem="S5F-s6-Ou9" secondAttribute="leading" constant="8" id="pPu-ro-hj8"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="title" destination="nTe-Lj-49W" id="5Vq-96-8IR"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="aQx-ef-1Bh" id="7EO-Ee-zCh"/>
+                                    <outlet property="delegate" destination="aQx-ef-1Bh" id="wFh-8y-Z92"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jYf-SF-j3f" secondAttribute="bottom" id="VWT-gF-cVk"/>
+                            <constraint firstItem="jYf-SF-j3f" firstAttribute="top" secondItem="lhC-1y-bwK" secondAttribute="top" id="h5W-zj-IhJ"/>
+                            <constraint firstItem="jYf-SF-j3f" firstAttribute="leading" secondItem="lhC-1y-bwK" secondAttribute="leading" id="hb7-cc-xZe"/>
+                            <constraint firstAttribute="trailing" secondItem="jYf-SF-j3f" secondAttribute="trailing" id="p6V-KY-OCt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="写真一覧" id="Rwz-El-Kc9"/>
+                    <connections>
+                        <outlet property="collectionView" destination="jYf-SF-j3f" id="GfU-QQ-icV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bu1-NE-SkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="1173"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="itt-Ed-oeN">
             <objects>
@@ -120,6 +228,7 @@
                     <connections>
                         <segue destination="S7f-Lb-ZYC" kind="relationship" relationship="viewControllers" id="fVw-fH-8uf"/>
                         <segue destination="h2f-h1-Ffy" kind="relationship" relationship="viewControllers" id="Bca-u4-CpG"/>
+                        <segue destination="EyM-cb-E2A" kind="relationship" relationship="viewControllers" id="Oo6-4H-gO4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wds-zC-Gb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -534,6 +643,7 @@
         <image name="blank" width="1" height="1"/>
         <image name="star-off" width="40" height="40"/>
         <image name="tabbar-favorite" width="30" height="30"/>
+        <image name="tabbar-photo" width="30" height="30"/>
         <image name="tabbar-search" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
