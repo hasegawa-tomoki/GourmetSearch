@@ -7,9 +7,16 @@ UITableViewDelegate, UITableViewDataSource {
 	
 	var yls: YahooLocalSearch = YahooLocalSearch()
 	var loadDataObserver: NSObjectProtocol?
+	var refreshObserver: NSObjectProtocol?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		// Pull to Refreshコントロール初期化
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self,
+			action: "onRefresh:", forControlEvents: .ValueChanged)
+		self.tableView.addSubview(refreshControl)
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -62,6 +69,28 @@ UITableViewDelegate, UITableViewDataSource {
 		super.didReceiveMemoryWarning()
 	}
 	
+	// MARK: - アプリケーションロジック
+	
+	// Pull to Refresh
+	func onRefresh(refreshControl: UIRefreshControl){
+		// UIRefreshControlを読込中状態にする
+		refreshControl.beginRefreshing()
+		// 終了通知を受信したらUIRefreshControlを停止する
+		refreshObserver = NSNotificationCenter.defaultCenter().addObserverForName(
+			yls.YLSLoadCompleteNotification,
+			object: nil,
+			queue: nil,
+			usingBlock: {
+				notification in
+				// 通知の待ち受けを終了
+				NSNotificationCenter.defaultCenter().removeObserver(self.refreshObserver!)
+				// UITefreshControlを停止する
+				refreshControl.endRefreshing()
+		})
+		// 再取得
+		yls.loadData(reset: true) 
+	}
+	
 	// MARK: - UITableViewDelegate
 	func tableView(tableView: UITableView,
 		heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -82,9 +111,14 @@ UITableViewDelegate, UITableViewDataSource {
 			if indexPath.section == 0 {
 				if indexPath.row < yls.shops.count {
 					// rowが店舗数以下なら店舗セルを返す
-					let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as
-					ShopListItemTableViewCell
+					let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as ShopListItemTableViewCell
 					cell.shop = yls.shops[indexPath.row]
+					// まだ残りがあって、現在の列の下の店舗が3つ以下になったら追加取得
+					if yls.shops.count < yls.total {
+						if yls.shops.count - indexPath.row <= 4 {
+							yls.loadData()
+						}
+					}
 					return cell
 				}
 			}
