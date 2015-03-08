@@ -235,7 +235,13 @@
                             <constraint firstAttribute="trailing" secondItem="aP8-rR-w1L" secondAttribute="trailing" id="m5j-AX-268"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="efv-hy-xZz"/>
+                    <navigationItem key="navigationItem" id="efv-hy-xZz">
+                        <barButtonItem key="rightBarButtonItem" title="編集" id="XHL-qD-zu4">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="vXZ-lx-hvc" id="gGt-Jh-zh8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="aP8-rR-w1L" id="ko8-NV-Lxn"/>
                         <segue destination="YpZ-ze-Tji" kind="show" identifier="PushShopDetail" id="fdD-gO-4wQ"/>

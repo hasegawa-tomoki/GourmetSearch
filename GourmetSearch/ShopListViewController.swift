@@ -17,6 +17,11 @@ class ShopListViewController: UIViewController,
 		refreshControl.addTarget(self,
 			action: "onRefresh:", forControlEvents: .ValueChanged)
 		self.tableView.addSubview(refreshControl)
+		
+		// お気に入りでなければ編集ボタンを削除
+		if !(self.navigationController is FavoriteNavigationController) {
+			self.navigationItem.rightBarButtonItem = nil
+		}
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -73,7 +78,7 @@ class ShopListViewController: UIViewController,
 	}
 	
 	override func viewWillDisappear(animated: Bool) {
-		// 通知の監視を終了
+		// 通知の待ち受けを終了
 		NSNotificationCenter.defaultCenter().removeObserver(self.loadDataObserver!)
 	}
 	
@@ -143,6 +148,49 @@ class ShopListViewController: UIViewController,
 			performSegueWithIdentifier("PushShopDetail", sender: indexPath)
 	}
 	
+	func tableView(tableView: UITableView,
+		canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+			// お気に入りなら削除可能
+			return self.navigationController is FavoriteNavigationController
+	}
+	
+	func tableView(tableView: UITableView,
+		commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+		forRowAtIndexPath indexPath: NSIndexPath) {
+			
+			// 削除の場合
+			if editingStyle == .Delete {
+				// User Defaultsに反映する
+				Favorite.remove(yls.shops[indexPath.row].gid)
+				// yls.shopsに反映する
+				yls.shops.removeAtIndex(indexPath.row)
+				// UITableView上の見た目に反映する
+				tableView.deleteRowsAtIndexPaths([indexPath],
+					withRowAnimation: .Automatic)
+			}
+	}
+	
+	func tableView(tableView: UITableView,
+		canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+			// お気に入りなら順番編集可能
+			return self.navigationController is FavoriteNavigationController
+	}
+	
+	func tableView(tableView: UITableView,
+		moveRowAtIndexPath sourceIndexPath: NSIndexPath,
+		toIndexPath destinationIndexPath: NSIndexPath) {
+			
+			// 移動元と移動先が同じなら何もしない
+			if sourceIndexPath == destinationIndexPath { return }
+			
+			// yls.shopsに反映する
+			let source = yls.shops[sourceIndexPath.row]
+			yls.shops.removeAtIndex(sourceIndexPath.row)
+			yls.shops.insert(source, atIndex: destinationIndexPath.row)
+			// User Defaultsに反映する
+			Favorite.move(sourceIndexPath.row, destinationIndexPath.row)
+	}
+	
 	// MARK: - UITableViewDataSource
 	func tableView(tableView: UITableView,
 		numberOfRowsInSection section: Int) -> Int {
@@ -180,6 +228,16 @@ class ShopListViewController: UIViewController,
 			if let indexPath = sender as? NSIndexPath {
 				vc.shop = yls.shops[indexPath.row]
 			}
+		}
+	}
+	
+	@IBAction func editButtonTapped(sender: UIBarButtonItem) {
+		if tableView.editing {
+			tableView.setEditing(false, animated: true)
+			sender.title = "編集"
+		} else {
+			tableView.setEditing(true, animated: true)
+			sender.title = "完了"
 		}
 	}
 }
