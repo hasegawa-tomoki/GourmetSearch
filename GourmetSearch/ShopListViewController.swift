@@ -22,13 +22,6 @@ class ShopListViewController: UIViewController,
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		
-		/*
-		var qc = QueryCondition()
-		qc.query = "ハンバーガー"
-		
-		yls = YahooLocalSearch(condition: qc)
-		*/
-		
 		// 読込完了通知を受信した時の処理
 		loadDataObserver = NSNotificationCenter.defaultCenter().addObserverForName(
 			yls.YLSLoadCompleteNotification,
@@ -36,6 +29,11 @@ class ShopListViewController: UIViewController,
 			queue: nil,
 			usingBlock: {
 				(notification) in
+				
+				// 店舗ID（Gid）が指定されたいたらその順番に並べ替える
+				if self.yls.condition.gid != nil {
+					self.yls.sortByGid()
+				}
 				
 				self.tableView.reloadData()
 				
@@ -60,7 +58,17 @@ class ShopListViewController: UIViewController,
 		)
 		
 		if yls.shops.count == 0 {
-			yls.loadData(reset: true)
+			if self.navigationController is FavoriteNavigationController {
+				// お気に入り: お気に入りから検索条件を作って検索
+				loadFavorites()
+				// ナビゲーションバータイトル設定
+				self.navigationItem.title = "お気に入り"
+			} else {
+				// 検索: 設定された検索条件から検索
+				yls.loadData(reset: true)
+				// ナビゲーションバータイトル設定
+				self.navigationItem.title = "店舗一覧"
+			}
 		}
 	}
 	
@@ -74,6 +82,25 @@ class ShopListViewController: UIViewController,
 	}
 	
 	// MARK: - アプリケーションロジック
+	
+	func loadFavorites(){
+		// お気に入りをUser Defaultsから読み込む
+		Favorite.load()
+		// お気に入りがあれば店舗ID（Gid）一覧を作成して検索を実行する
+		if Favorite.favorites.count > 0 {
+			// お気に入り一覧を表現する検索条件オブジェクト
+			var condition = QueryCondition()
+			// favoritesプロパティの配列の中身を「,」で結合して文字列にする
+			condition.gid = join(",", Favorite.favorites)
+			// 検索条件を設定して検索実行
+			yls.condition = condition
+			yls.loadData(reset: true)
+		} else {
+			// お気に入りがなければ検索を実行せずAPI読込完了通知
+			NSNotificationCenter.defaultCenter().postNotificationName(
+				yls.YLSLoadCompleteNotification, object: nil)
+		}
+	}
 	
 	// Pull to Refresh
 	func onRefresh(refreshControl: UIRefreshControl){
@@ -91,8 +118,14 @@ class ShopListViewController: UIViewController,
 				// UITefreshControlを停止する
 				refreshControl.endRefreshing()
 		})
-		// 再取得
-		yls.loadData(reset: true) 
+		
+		if self.navigationController is FavoriteNavigationController {
+			// お気に入り: User Defaultsからお気に入り一覧を再取得してAPI実行する
+			loadFavorites()
+		} else {
+			// 検索: そのまま再取得する
+			yls.loadData(reset: true)
+		}
 	}
 	
 	// MARK: - UITableViewDelegate

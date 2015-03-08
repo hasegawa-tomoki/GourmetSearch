@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPR-z8-2Rn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XCX-wv-509">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -71,21 +71,58 @@
             </objects>
             <point key="canvasLocation" x="1062" y="-211"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="I68-od-jJ8">
+        <!--検索-->
+        <scene sceneID="cFE-w8-UcO">
             <objects>
-                <navigationController id="QPR-z8-2Rn" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GeJ-dM-7Ab">
+                <navigationController id="S7f-Lb-ZYC" customClass="SearchNavigationController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="検索" image="tabbar-search" id="SWC-ai-hDA"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RaL-0s-gim">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="5sV-EM-Lhd" kind="relationship" relationship="rootViewController" id="Ftw-qZ-Fhf"/>
+                        <segue destination="5sV-EM-Lhd" kind="relationship" relationship="rootViewController" id="Ri6-W8-2fl"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l0M-mr-4Va" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="609-QX-ca7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="336" y="-211"/>
+        </scene>
+        <!--お気に入り-->
+        <scene sceneID="700-Pg-XPW">
+            <objects>
+                <navigationController id="h2f-h1-Ffy" customClass="FavoriteNavigationController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="お気に入り" image="tabbar-favorite" id="JE7-cN-dbf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ziq-ER-Yxv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="sAQ-Ku-tt6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYA-Wn-LG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="336" y="481"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="itt-Ed-oeN">
+            <objects>
+                <tabBarController id="XCX-wv-509" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="diM-KG-Qj3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="S7f-Lb-ZYC" kind="relationship" relationship="viewControllers" id="fVw-fH-8uf"/>
+                        <segue destination="h2f-h1-Ffy" kind="relationship" relationship="viewControllers" id="Bca-u4-CpG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wds-zC-Gb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-464" y="110"/>
         </scene>
         <!--Shop List View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -100,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aP8-rR-w1L">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopListItem" rowHeight="100" id="Rt1-0o-RF0" customClass="ShopListItemTableViewCell" customModule="GourmetSearch" customModuleProvider="target">
@@ -198,6 +235,7 @@
                             <constraint firstAttribute="trailing" secondItem="aP8-rR-w1L" secondAttribute="trailing" id="m5j-AX-268"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="efv-hy-xZz"/>
                     <connections>
                         <outlet property="tableView" destination="aP8-rR-w1L" id="ko8-NV-Lxn"/>
                         <segue destination="YpZ-ze-Tji" kind="show" identifier="PushShopDetail" id="fdD-gO-4wQ"/>
@@ -205,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771" y="-211"/>
+            <point key="canvasLocation" x="1842" y="191"/>
         </scene>
         <!--Shop Detail View Controller-->
         <scene sceneID="JY1-S7-Vvh">
@@ -433,11 +471,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6D-pi-3Yb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2464" y="-211"/>
+            <point key="canvasLocation" x="2546" y="191"/>
         </scene>
     </scenes>
     <resources>
         <image name="blank" width="1" height="1"/>
         <image name="star-off" width="40" height="40"/>
+        <image name="tabbar-favorite" width="30" height="30"/>
+        <image name="tabbar-search" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sAQ-Ku-tt6"/>
+    </inferredMetricsTieBreakers>
 </document>
