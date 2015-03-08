@@ -171,6 +171,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoListHeader" id="S5F-s6-Ou9" customClass="PhotoListItemCollectionViewHeader" customModule="GourmetSearch" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTe-Lj-49W">
@@ -427,8 +428,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9Z-aD-0Xj">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKb-aR-3eM">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="641"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKb-aR-3eM">
+                                        <rect key="frame" x="0.0" y="-300" width="600" height="900"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2hV-6C-6L4">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
@@ -580,17 +581,74 @@
                                                     <constraint firstAttribute="trailing" secondItem="DDv-NK-RR0" secondAttribute="trailing" id="rrO-f1-CTA"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbv-rT-gpB" userLabel="シェアボタンコンテナ">
+                                                <rect key="frame" x="8" y="591" width="584" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1T-II-gpg" userLabel="LINEボタン">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="4AW-Pt-lqC"/>
+                                                            <constraint firstAttribute="height" constant="50" id="DSm-3M-fxB"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="sns-line">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="lineTapped:" destination="YpZ-ze-Tji" eventType="touchUpInside" id="WFB-eA-cQ0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjN-U0-hKM" userLabel="Twitterボタン">
+                                                        <rect key="frame" x="58" y="5" width="50" height="41"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="he9-3I-8OR"/>
+                                                            <constraint firstAttribute="height" constant="41" id="rgO-46-rIE"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="sns-twitter">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="twitterTapped:" destination="YpZ-ze-Tji" eventType="touchUpInside" id="x3r-oK-U51"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ac3-SX-de4" userLabel="Facebookボタン">
+                                                        <rect key="frame" x="116" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="27n-q4-80b"/>
+                                                            <constraint firstAttribute="width" constant="50" id="6ae-32-KWZ"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="sns-facebook">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="facebookTapped:" destination="YpZ-ze-Tji" eventType="touchUpInside" id="Skf-0o-rVX"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="IjN-U0-hKM" firstAttribute="leading" secondItem="M1T-II-gpg" secondAttribute="trailing" constant="8" id="4Lu-yG-m7D"/>
+                                                    <constraint firstItem="Ac3-SX-de4" firstAttribute="leading" secondItem="IjN-U0-hKM" secondAttribute="trailing" constant="8" id="SzF-D0-v5w"/>
+                                                    <constraint firstItem="M1T-II-gpg" firstAttribute="leading" secondItem="Nbv-rT-gpB" secondAttribute="leading" id="bSy-ZB-nJC"/>
+                                                    <constraint firstAttribute="centerY" secondItem="IjN-U0-hKM" secondAttribute="centerY" id="fuv-Jl-ZCi"/>
+                                                    <constraint firstAttribute="height" constant="50" id="jZi-cR-gel"/>
+                                                    <constraint firstAttribute="centerY" secondItem="M1T-II-gpg" secondAttribute="centerY" id="n8y-TS-viu"/>
+                                                    <constraint firstAttribute="centerY" secondItem="Ac3-SX-de4" secondAttribute="centerY" id="uag-St-ms6"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="Nbv-rT-gpB" firstAttribute="leading" secondItem="bKb-aR-3eM" secondAttribute="leading" constant="8" id="0ld-MB-3pB"/>
                                             <constraint firstItem="Hud-XG-yvX" firstAttribute="leading" secondItem="bKb-aR-3eM" secondAttribute="leading" id="2O9-A3-ldk"/>
                                             <constraint firstItem="AyH-bH-UUD" firstAttribute="top" secondItem="Hud-XG-yvX" secondAttribute="bottom" constant="20" id="4jR-9n-TOK"/>
+                                            <constraint firstItem="Nbv-rT-gpB" firstAttribute="top" secondItem="E9I-x7-bjh" secondAttribute="bottom" constant="30" id="93t-tE-st9"/>
                                             <constraint firstItem="Hud-XG-yvX" firstAttribute="top" secondItem="lgi-KM-xrx" secondAttribute="bottom" id="D3F-CT-Nz4"/>
                                             <constraint firstAttribute="trailing" secondItem="mqr-Id-pmp" secondAttribute="trailing" constant="8" id="FEO-2D-lom"/>
                                             <constraint firstItem="lgi-KM-xrx" firstAttribute="top" secondItem="mqr-Id-pmp" secondAttribute="bottom" constant="8" id="FFr-LO-Rfx"/>
                                             <constraint firstItem="E9I-x7-bjh" firstAttribute="top" secondItem="AyH-bH-UUD" secondAttribute="bottom" constant="20" id="GIf-hp-slC"/>
                                             <constraint firstItem="mqr-Id-pmp" firstAttribute="leading" secondItem="bKb-aR-3eM" secondAttribute="leading" constant="8" id="KwK-Pe-199"/>
                                             <constraint firstItem="E9I-x7-bjh" firstAttribute="leading" secondItem="bKb-aR-3eM" secondAttribute="leading" id="MLY-mb-EpD"/>
+                                            <constraint firstAttribute="bottom" secondItem="Nbv-rT-gpB" secondAttribute="bottom" constant="30" id="ROO-tK-q9G"/>
                                             <constraint firstAttribute="trailing" secondItem="2hV-6C-6L4" secondAttribute="trailing" id="SY5-Bf-RFb"/>
                                             <constraint firstAttribute="trailing" secondItem="E9I-x7-bjh" secondAttribute="trailing" id="YWe-hD-fkD"/>
                                             <constraint firstAttribute="trailing" secondItem="AyH-bH-UUD" secondAttribute="trailing" id="Yoi-DV-c5G"/>
@@ -600,8 +658,8 @@
                                             <constraint firstItem="AyH-bH-UUD" firstAttribute="leading" secondItem="bKb-aR-3eM" secondAttribute="leading" id="elx-w0-zAe"/>
                                             <constraint firstItem="2hV-6C-6L4" firstAttribute="top" secondItem="bKb-aR-3eM" secondAttribute="top" id="gnW-85-6ue"/>
                                             <constraint firstAttribute="trailing" secondItem="lgi-KM-xrx" secondAttribute="trailing" id="kbw-NF-9Gh"/>
-                                            <constraint firstAttribute="bottom" secondItem="E9I-x7-bjh" secondAttribute="bottom" constant="80" id="rca-MK-1NO"/>
                                             <constraint firstItem="lgi-KM-xrx" firstAttribute="leading" secondItem="bKb-aR-3eM" secondAttribute="leading" id="svB-zv-uc0"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nbv-rT-gpB" secondAttribute="trailing" constant="8" id="xgO-lc-BmV"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -633,14 +691,17 @@
                     <connections>
                         <outlet property="address" destination="dVH-5p-q2u" id="D3s-03-nmO"/>
                         <outlet property="addressContainerHeight" destination="zUz-t9-I2d" id="tkC-YZ-MEK"/>
+                        <outlet property="facebook" destination="Ac3-SX-de4" id="ewB-WK-xb3"/>
                         <outlet property="favoriteIcon" destination="slS-j2-deP" id="HLX-vO-Zpx"/>
                         <outlet property="favoriteLabel" destination="HkN-X2-xMv" id="OhR-gF-W1S"/>
+                        <outlet property="line" destination="M1T-II-gpg" id="iaj-nP-P5V"/>
                         <outlet property="map" destination="AyH-bH-UUD" id="g1B-P4-bxO"/>
                         <outlet property="name" destination="mqr-Id-pmp" id="4dB-Ea-PZh"/>
                         <outlet property="nameHeight" destination="BdF-Ln-4Rx" id="yY3-Jo-dlV"/>
                         <outlet property="photo" destination="2hV-6C-6L4" id="SVm-6a-JI1"/>
                         <outlet property="scrollView" destination="x9Z-aD-0Xj" id="8Tb-De-776"/>
                         <outlet property="tel" destination="mxU-9c-8mX" id="fQD-wT-0G3"/>
+                        <outlet property="twitter" destination="IjN-U0-hKM" id="cdM-H9-iJz"/>
                         <segue destination="znI-eS-YOr" kind="show" identifier="PushMapDetail" id="sIc-MG-VMm"/>
                     </connections>
                 </viewController>
@@ -691,6 +752,9 @@
     </scenes>
     <resources>
         <image name="blank" width="1" height="1"/>
+        <image name="sns-facebook" width="50" height="50"/>
+        <image name="sns-line" width="80" height="80"/>
+        <image name="sns-twitter" width="569" height="463"/>
         <image name="star-off" width="40" height="40"/>
         <image name="tabbar-favorite" width="30" height="30"/>
         <image name="tabbar-photo" width="30" height="30"/>
