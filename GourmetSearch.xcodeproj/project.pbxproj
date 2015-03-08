@@ -11,6 +11,8 @@
 		E242A0BB1AACB35D00BC6ACB /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0BA1AACB35D00BC6ACB /* Favorite.swift */; };
 		E242A0BE1AACB95E00BC6ACB /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0BD1AACB95E00BC6ACB /* SearchNavigationController.swift */; };
 		E242A0C01AACB96F00BC6ACB /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0BF1AACB96F00BC6ACB /* FavoriteNavigationController.swift */; };
+		E242A0C21AACCB4500BC6ACB /* ShopMapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0C11AACCB4500BC6ACB /* ShopMapDetailViewController.swift */; };
+		E242A0C41AACCCA600BC6ACB /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0C31AACCCA600BC6ACB /* LocationService.swift */; };
 		E297DE7C1AAB67B700674699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DE7B1AAB67B700674699 /* AppDelegate.swift */; };
 		E297DE7E1AAB67B700674699 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DE7D1AAB67B700674699 /* ShopListViewController.swift */; };
 		E297DE811AAB67B700674699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E297DE7F1AAB67B700674699 /* Main.storyboard */; };
@@ -62,6 +64,8 @@
 		E242A0BA1AACB35D00BC6ACB /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		E242A0BD1AACB95E00BC6ACB /* SearchNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNavigationController.swift; sourceTree = "<group>"; };
 		E242A0BF1AACB96F00BC6ACB /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
+		E242A0C11AACCB4500BC6ACB /* ShopMapDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopMapDetailViewController.swift; sourceTree = "<group>"; };
+		E242A0C31AACCCA600BC6ACB /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		E297DE761AAB67B700674699 /* GourmetSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E297DE7A1AAB67B700674699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E297DE7B1AAB67B700674699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */,
 				E297DEC41AAC7A9500674699 /* FreewordTableViewCell.swift */,
 				E297DECC1AACA00E00674699 /* ShopDetailViewController.swift */,
+				E242A0C11AACCB4500BC6ACB /* ShopMapDetailViewController.swift */,
 			);
 			name = ShopList;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			children = (
 				E297DEBA1AABF9E800674699 /* YahooLocal.swift */,
 				E242A0BA1AACB35D00BC6ACB /* Favorite.swift */,
+				E242A0C31AACCCA600BC6ACB /* LocationService.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E242A0C21AACCB4500BC6ACB /* ShopMapDetailViewController.swift in Sources */,
 				E297DEB51AAB7F8100674699 /* ShopListItemTableViewCell.swift in Sources */,
 				E297DE7E1AAB67B700674699 /* ShopListViewController.swift in Sources */,
 				E297DEBB1AABF9E800674699 /* YahooLocal.swift in Sources */,
@@ -363,6 +370,7 @@
 				E297DE7C1AAB67B700674699 /* AppDelegate.swift in Sources */,
 				E242A0C01AACB96F00BC6ACB /* FavoriteNavigationController.swift in Sources */,
 				E297DEC31AAC78A900674699 /* SearchTopTableViewController.swift in Sources */,
+				E242A0C41AACCCA600BC6ACB /* LocationService.swift in Sources */,
 				E242A0BE1AACB95E00BC6ACB /* SearchNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

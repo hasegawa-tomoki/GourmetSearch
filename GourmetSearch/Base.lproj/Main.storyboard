@@ -60,12 +60,14 @@
                     <navigationItem key="navigationItem" title="店舗検索" id="U9H-pL-16m"/>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="PushShopList" id="deW-Ns-OTa"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="PushShopListFromHere" id="8Gz-bY-aM0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSV-Xw-hvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="fWy-Ok-x5q">
                     <connections>
                         <action selector="onTap:" destination="5sV-EM-Lhd" id="CcP-xi-9rf"/>
+                        <outlet property="delegate" destination="5sV-EM-Lhd" id="3eL-zB-nv6"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -473,11 +475,52 @@
                         <outlet property="photo" destination="2hV-6C-6L4" id="SVm-6a-JI1"/>
                         <outlet property="scrollView" destination="x9Z-aD-0Xj" id="8Tb-De-776"/>
                         <outlet property="tel" destination="mxU-9c-8mX" id="fQD-wT-0G3"/>
+                        <segue destination="znI-eS-YOr" kind="show" identifier="PushMapDetail" id="sIc-MG-VMm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6D-pi-3Yb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2546" y="191"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="sMA-z1-0Vc">
+            <objects>
+                <viewController id="znI-eS-YOr" customClass="ShopMapDetailViewController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cyN-Ks-voN"/>
+                        <viewControllerLayoutGuide type="bottom" id="XGG-z9-vgS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MK0-88-d6r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ca6-Ye-6ct">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ca6-Ye-6ct" firstAttribute="top" secondItem="cyN-Ks-voN" secondAttribute="bottom" id="0vj-62-fLG"/>
+                            <constraint firstAttribute="trailing" secondItem="Ca6-Ye-6ct" secondAttribute="trailing" id="QP9-AO-N7w"/>
+                            <constraint firstAttribute="bottom" secondItem="Ca6-Ye-6ct" secondAttribute="bottom" id="mQF-Pj-vRo"/>
+                            <constraint firstItem="Ca6-Ye-6ct" firstAttribute="leading" secondItem="MK0-88-d6r" secondAttribute="leading" id="tmW-MX-cgm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="kuQ-Un-qkG">
+                        <barButtonItem key="rightBarButtonItem" title="現在地を表示" id="EYc-Vy-URD">
+                            <connections>
+                                <action selector="showHereButtonTapped:" destination="znI-eS-YOr" id="318-Ys-OBv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="map" destination="Ca6-Ye-6ct" id="UXu-dD-E7T"/>
+                        <outlet property="showHereButton" destination="EYc-Vy-URD" id="Jre-FX-5yg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTk-JR-uEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3227" y="191"/>
         </scene>
     </scenes>
     <resources>
@@ -487,6 +530,6 @@
         <image name="tabbar-search" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sAQ-Ku-tt6"/>
+        <segue reference="8Gz-bY-aM0"/>
     </inferredMetricsTieBreakers>
 </document>
