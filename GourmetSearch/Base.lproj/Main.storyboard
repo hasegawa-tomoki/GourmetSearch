@@ -209,11 +209,61 @@
                     <navigationItem key="navigationItem" title="写真一覧" id="Rwz-El-Kc9"/>
                     <connections>
                         <outlet property="collectionView" destination="jYf-SF-j3f" id="GfU-QQ-icV"/>
+                        <segue destination="xjv-yv-nXB" kind="show" identifier="PushPhotoDetail" id="Lqe-19-7gK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bu1-NE-SkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1062" y="1173"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="Wow-Wr-yuW">
+            <objects>
+                <viewController id="xjv-yv-nXB" customClass="PhotoDetailViewController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y2H-Zw-3Cb"/>
+                        <viewControllerLayoutGuide type="bottom" id="qeq-uA-L1N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kOr-bg-P1F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsF-IK-ABl">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BW1-md-xro">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BW1-md-xro" firstAttribute="top" secondItem="rsF-IK-ABl" secondAttribute="top" id="6Nb-zC-d0W"/>
+                                    <constraint firstAttribute="bottom" secondItem="BW1-md-xro" secondAttribute="bottom" id="P2r-1h-Cjr"/>
+                                    <constraint firstAttribute="trailing" secondItem="BW1-md-xro" secondAttribute="trailing" id="TpZ-yb-iNC"/>
+                                    <constraint firstItem="BW1-md-xro" firstAttribute="leading" secondItem="rsF-IK-ABl" secondAttribute="leading" id="dph-f6-qsf"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="xjv-yv-nXB" id="f6j-uq-hWj"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BW1-md-xro" firstAttribute="width" secondItem="kOr-bg-P1F" secondAttribute="width" id="4Tz-iJ-oz4"/>
+                            <constraint firstItem="rsF-IK-ABl" firstAttribute="top" secondItem="Y2H-Zw-3Cb" secondAttribute="bottom" id="4U5-4m-oVm"/>
+                            <constraint firstItem="rsF-IK-ABl" firstAttribute="leading" secondItem="kOr-bg-P1F" secondAttribute="leading" id="6HS-np-ugE"/>
+                            <constraint firstAttribute="trailing" secondItem="rsF-IK-ABl" secondAttribute="trailing" id="OFm-x4-99V"/>
+                            <constraint firstAttribute="bottom" secondItem="rsF-IK-ABl" secondAttribute="bottom" id="OKi-AF-3Hu"/>
+                            <constraint firstItem="BW1-md-xro" firstAttribute="height" secondItem="kOr-bg-P1F" secondAttribute="height" id="OcX-9o-UnO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photo" destination="BW1-md-xro" id="KJe-Zl-PoS"/>
+                        <outlet property="scrollView" destination="rsF-IK-ABl" id="zLe-N1-6Jz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qtS-1K-kHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842" y="1173"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="itt-Ed-oeN">
