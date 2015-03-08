@@ -1,7 +1,7 @@
 import UIKit
 
 class ShopListViewController: UIViewController,
-UITableViewDelegate, UITableViewDataSource {
+	UITableViewDelegate, UITableViewDataSource {
 	
 	@IBOutlet weak var tableView: UITableView!
 	
@@ -59,7 +59,9 @@ UITableViewDelegate, UITableViewDataSource {
 			}
 		)
 		
-		yls.loadData(reset: true)
+		if yls.shops.count == 0 {
+			yls.loadData(reset: true)
+		}
 	}
 	
 	override func viewWillDisappear(animated: Bool) {
@@ -96,8 +98,18 @@ UITableViewDelegate, UITableViewDataSource {
 	// MARK: - UITableViewDelegate
 	func tableView(tableView: UITableView,
 		heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+			// セルの高さを返す
 			return 100
 	}
+	
+	func tableView(tableView: UITableView,
+		didSelectRowAtIndexPath indexPath: NSIndexPath) {
+			// セルの選択状態を解除する
+			tableView.deselectRowAtIndexPath(indexPath, animated: true)
+			// Segueを実行する
+			performSegueWithIdentifier("PushShopDetail", sender: indexPath)
+	}
+	
 	// MARK: - UITableViewDataSource
 	func tableView(tableView: UITableView,
 		numberOfRowsInSection section: Int) -> Int {
@@ -126,6 +138,16 @@ UITableViewDelegate, UITableViewDataSource {
 			}
 			// 通常はここに到達しない
 			return UITableViewCell()
+	}
+	
+	// MARK: - Navigation
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "PushShopDetail" {
+			let vc = segue.destinationViewController as ShopDetailViewController
+			if let indexPath = sender as? NSIndexPath {
+				vc.shop = yls.shops[indexPath.row]
+			}
+		}
 	}
 }
 

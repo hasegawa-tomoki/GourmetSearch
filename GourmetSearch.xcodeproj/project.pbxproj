@@ -24,6 +24,7 @@
 		E297DEBB1AABF9E800674699 /* YahooLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DEBA1AABF9E800674699 /* YahooLocal.swift */; };
 		E297DEC31AAC78A900674699 /* SearchTopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */; };
 		E297DEC51AAC7A9500674699 /* FreewordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DEC41AAC7A9500674699 /* FreewordTableViewCell.swift */; };
+		E297DECD1AACA00E00674699 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DECC1AACA00E00674699 /* ShopDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		E297DEBA1AABF9E800674699 /* YahooLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocal.swift; sourceTree = "<group>"; };
 		E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
 		E297DEC41AAC7A9500674699 /* FreewordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreewordTableViewCell.swift; sourceTree = "<group>"; };
+		E297DECC1AACA00E00674699 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				E297DE7D1AAB67B700674699 /* ShopListViewController.swift */,
 				E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */,
 				E297DEC41AAC7A9500674699 /* FreewordTableViewCell.swift */,
+				E297DECC1AACA00E00674699 /* ShopDetailViewController.swift */,
 			);
 			name = ShopList;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				E297DE7E1AAB67B700674699 /* ShopListViewController.swift in Sources */,
 				E297DEBB1AABF9E800674699 /* YahooLocal.swift in Sources */,
 				E297DEC51AAC7A9500674699 /* FreewordTableViewCell.swift in Sources */,
+				E297DECD1AACA00E00674699 /* ShopDetailViewController.swift in Sources */,
 				E297DE7C1AAB67B700674699 /* AppDelegate.swift in Sources */,
 				E297DEC31AAC78A900674699 /* SearchTopTableViewController.swift in Sources */,
 			);
