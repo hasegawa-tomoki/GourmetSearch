@@ -28,6 +28,8 @@ UITableViewDelegate, UITableViewDataSource {
 			usingBlock: {
 				(notification) in
 				
+				self.tableView.reloadData()
+				
 				// エラーがあればダイアログを開く
 				if notification.userInfo != nil {
 					if let userInfo = notification.userInfo as? [String: String!] {
@@ -68,15 +70,25 @@ UITableViewDelegate, UITableViewDataSource {
 	// MARK: - UITableViewDataSource
 	func tableView(tableView: UITableView,
 		numberOfRowsInSection section: Int) -> Int {
-			return 20
+			if section == 0 {
+				// セルの数は店舗数
+				return yls.shops.count
+			}
+			// 通常はここに到達しない
+			return 0
 	}
 	func tableView(tableView: UITableView,
 		cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 			if indexPath.section == 0 {
-				let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as ShopListItemTableViewCell
-				cell.name.text = "\(indexPath.row)"
-				return cell
+				if indexPath.row < yls.shops.count {
+					// rowが店舗数以下なら店舗セルを返す
+					let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as
+					ShopListItemTableViewCell
+					cell.shop = yls.shops[indexPath.row]
+					return cell
+				}
 			}
+			// 通常はここに到達しない
 			return UITableViewCell()
 	}
 }
