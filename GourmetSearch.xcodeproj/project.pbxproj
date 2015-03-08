@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1621B6CC220B25F49FAF9A39 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E157B76FB20832E043FF94E7 /* libPods.a */; };
+		E242A0BB1AACB35D00BC6ACB /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0BA1AACB35D00BC6ACB /* Favorite.swift */; };
 		E297DE7C1AAB67B700674699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DE7B1AAB67B700674699 /* AppDelegate.swift */; };
 		E297DE7E1AAB67B700674699 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DE7D1AAB67B700674699 /* ShopListViewController.swift */; };
 		E297DE811AAB67B700674699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E297DE7F1AAB67B700674699 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		8D6312395E51947265C0EC6F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9C5EC02F060B3817D7604D8F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E157B76FB20832E043FF94E7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E242A0BA1AACB35D00BC6ACB /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		E297DE761AAB67B700674699 /* GourmetSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E297DE7A1AAB67B700674699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E297DE7B1AAB67B700674699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				E297DEBA1AABF9E800674699 /* YahooLocal.swift */,
+				E242A0BA1AACB35D00BC6ACB /* Favorite.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				E297DEBB1AABF9E800674699 /* YahooLocal.swift in Sources */,
 				E297DEC51AAC7A9500674699 /* FreewordTableViewCell.swift in Sources */,
 				E297DECD1AACA00E00674699 /* ShopDetailViewController.swift in Sources */,
+				E242A0BB1AACB35D00BC6ACB /* Favorite.swift in Sources */,
 				E297DE7C1AAB67B700674699 /* AppDelegate.swift in Sources */,
 				E297DEC31AAC78A900674699 /* SearchTopTableViewController.swift in Sources */,
 			);

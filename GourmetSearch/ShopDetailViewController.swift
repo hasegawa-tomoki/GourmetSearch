@@ -33,6 +33,9 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
 		tel.text = shop.tel
 		// 住所
 		address.text = shop.address
+		
+		// お気に入り状態をボタンラベルに反映
+		updateFavoriteButton()
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -68,6 +71,18 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
 		}
 	}
 	
+	// MARK: - アプリケーションロジック
+	func updateFavoriteButton(){
+		if Favorite.inFavorites(shop.gid) {
+			// お気に入りに入っている
+			favoriteIcon.image = UIImage(named: "star-on")
+			favoriteLabel.text = "お気に入りからはずす"
+		} else {
+			// お気に入りに入っていない
+			favoriteIcon.image = UIImage(named: "star-off")
+			favoriteLabel.text = "お気に入りに入れる"
+		}
+	}
 	// MARK: - IBAction
 	@IBAction func telTapped(sender: UIButton) {
 		println("telTapped")
@@ -76,6 +91,8 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
 		println("addressTapped")
 	}
 	@IBAction func favoriteTapped(sender: UIButton) {
-		println("favoriteTapped")
+		// お気に入りセル: お気に入り状態を変更する
+		Favorite.toggle(shop.gid)
+		updateFavoriteButton()
 	}
 }
