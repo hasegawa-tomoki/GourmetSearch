@@ -1,7 +1,9 @@
 import UIKit
 import MapKit
 
-class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
+class ShopDetailViewController: UIViewController, UIScrollViewDelegate,
+UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+	
 	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var photo: UIImageView!
 	@IBOutlet weak var name: UILabel!
@@ -15,6 +17,7 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var addressContainerHeight: NSLayoutConstraint!
 	
 	var shop = Shop()
+	let ipc = UIImagePickerController()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -50,6 +53,12 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
 		
 		// お気に入り状態をボタンラベルに反映
 		updateFavoriteButton()
+		
+		// UIImagePickerControllerDelegateの設定
+		// Delegate設定
+		ipc.delegate = self
+		// トリミングなどを行う
+		ipc.allowsEditing = true
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -85,6 +94,19 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
 		}
 	}
 	
+	// MARK: - UIImagePickerControllerDelegate
+	func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+		ipc.dismissViewControllerAnimated(true, completion: nil)
+	}
+	func imagePickerController(picker: UIImagePickerController,
+		didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+			
+			if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+				ShopPhoto.sharedInstance?.append(shop: shop, image: image)
+			}
+			ipc.dismissViewControllerAnimated(true, completion: nil)
+	}
+	
 	// MARK: - Navigation
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "PushMapDetail" {
@@ -117,5 +139,38 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
 		// お気に入りセル: お気に入り状態を変更する
 		Favorite.toggle(shop.gid)
 		updateFavoriteButton()
+	}
+	
+	@IBAction func addPhotoTapped(sender: UIBarButtonItem) {
+		let alert = UIAlertController(title: nil,
+			message: nil, preferredStyle: .ActionSheet)
+		// カメラが使えるか確認して使えるなら「写真を撮る」選択肢を表示
+		if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+			alert.addAction(
+				UIAlertAction(title: "写真を撮る", style: .Default, handler: {
+					action in
+					// ソースはカメラ
+					self.ipc.sourceType = .Camera
+					// カメラUIを起動
+					self.presentViewController(self.ipc, animated: true, completion: nil)
+				})
+			)
+		}
+		// 「写真を選択」ボタンはいつでも使える
+		alert.addAction(
+			UIAlertAction(title: "写真を選択", style: .Default, handler: {
+				action in
+				// ソースは写真選択
+				self.ipc.sourceType = .PhotoLibrary
+				// 写真選択UIを起動
+				self.presentViewController(self.ipc, animated: true, completion: nil)
+			})
+		)
+		alert.addAction(
+			UIAlertAction(title: "キャンセル", style: .Cancel, handler: {
+				action in
+			})
+		)
+		presentViewController(alert, animated: true, completion: nil) 
 	}
 }

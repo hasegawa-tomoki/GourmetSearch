@@ -464,6 +464,13 @@
                             <constraint firstAttribute="width" secondItem="x9Z-aD-0Xj" secondAttribute="width" id="t2d-yW-LAr"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zHp-Ql-f5G">
+                        <barButtonItem key="rightBarButtonItem" title="写真を追加" id="6fR-6D-2Ms">
+                            <connections>
+                                <action selector="addPhotoTapped:" destination="YpZ-ze-Tji" id="Y2r-qk-2Ec"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="address" destination="dVH-5p-q2u" id="D3s-03-nmO"/>
                         <outlet property="addressContainerHeight" destination="zUz-t9-I2d" id="tkC-YZ-MEK"/>
