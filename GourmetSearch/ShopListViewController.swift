@@ -22,10 +22,12 @@ UITableViewDelegate, UITableViewDataSource {
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		
+		/*
 		var qc = QueryCondition()
 		qc.query = "ハンバーガー"
 		
 		yls = YahooLocalSearch(condition: qc)
+		*/
 		
 		// 読込完了通知を受信した時の処理
 		loadDataObserver = NSNotificationCenter.defaultCenter().addObserverForName(

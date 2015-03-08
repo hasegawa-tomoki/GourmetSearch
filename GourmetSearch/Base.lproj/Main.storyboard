@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPR-z8-2Rn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
+        <!--Search Top Table View Controller-->
+        <scene sceneID="J8l-CM-ceA">
+            <objects>
+                <tableViewController id="5sV-EM-Lhd" userLabel="Search Top Table View Controller" customClass="SearchTopTableViewController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eL5-KX-Cmh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Freeword" id="sDb-BV-c6x" customClass="FreewordTableViewCell" customModule="GourmetSearch" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sDb-BV-c6x" id="VOa-6w-6KD">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="フリーワード検索" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1z-jz-zVB">
+                                            <rect key="frame" x="16" y="11" width="140" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="M5D-bE-jeR"/>
+                                                <constraint firstAttribute="width" constant="140" id="dgr-49-cpz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q3r-4a-C5p">
+                                            <rect key="frame" x="172" y="7" width="412" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="k0g-PK-dcu"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="Q3r-4a-C5p" secondAttribute="centerY" id="0CK-bI-1tk"/>
+                                        <constraint firstAttribute="centerY" secondItem="U1z-jz-zVB" secondAttribute="centerY" id="8ak-nL-lS0"/>
+                                        <constraint firstItem="Q3r-4a-C5p" firstAttribute="leading" secondItem="U1z-jz-zVB" secondAttribute="trailing" constant="16" id="Jag-y8-8Oy"/>
+                                        <constraint firstItem="U1z-jz-zVB" firstAttribute="leading" secondItem="VOa-6w-6KD" secondAttribute="leading" constant="16" id="RDY-kd-c43"/>
+                                        <constraint firstAttribute="trailing" secondItem="Q3r-4a-C5p" secondAttribute="trailing" constant="16" id="Rne-uW-Ria"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="freeword" destination="Q3r-4a-C5p" id="dG2-Ed-vVy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5sV-EM-Lhd" id="2do-IN-CFw"/>
+                            <outlet property="delegate" destination="5sV-EM-Lhd" id="5ui-Zu-uyL"/>
+                            <outletCollection property="gestureRecognizers" destination="fWy-Ok-x5q" appends="YES" id="kwQ-eW-vPV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="店舗検索" id="U9H-pL-16m"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="PushShopList" id="deW-Ns-OTa"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pSV-Xw-hvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fWy-Ok-x5q">
+                    <connections>
+                        <action selector="onTap:" destination="5sV-EM-Lhd" id="CcP-xi-9rf"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1062" y="-211"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I68-od-jJ8">
+            <objects>
+                <navigationController id="QPR-z8-2Rn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GeJ-dM-7Ab">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5sV-EM-Lhd" kind="relationship" relationship="rootViewController" id="Ftw-qZ-Fhf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0M-mr-4Va" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="336" y="-211"/>
+        </scene>
         <!--Shop List View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -121,6 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1771" y="-211"/>
         </scene>
     </scenes>
 </document>

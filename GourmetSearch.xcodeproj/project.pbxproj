@@ -22,6 +22,8 @@
 		E297DEAB1AAB6AA400674699 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E297DEA31AAB6A4A00674699 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E297DEB51AAB7F8100674699 /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DEB41AAB7F8100674699 /* ShopListItemTableViewCell.swift */; };
 		E297DEBB1AABF9E800674699 /* YahooLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DEBA1AABF9E800674699 /* YahooLocal.swift */; };
+		E297DEC31AAC78A900674699 /* SearchTopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */; };
+		E297DEC51AAC7A9500674699 /* FreewordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DEC41AAC7A9500674699 /* FreewordTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		E297DEAD1AAB6B9400674699 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E297DEB41AAB7F8100674699 /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
 		E297DEBA1AABF9E800674699 /* YahooLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocal.swift; sourceTree = "<group>"; };
+		E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
+		E297DEC41AAC7A9500674699 /* FreewordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreewordTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,8 @@
 			children = (
 				E297DEB41AAB7F8100674699 /* ShopListItemTableViewCell.swift */,
 				E297DE7D1AAB67B700674699 /* ShopListViewController.swift */,
+				E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */,
+				E297DEC41AAC7A9500674699 /* FreewordTableViewCell.swift */,
 			);
 			name = ShopList;
 			sourceTree = "<group>";
@@ -331,7 +337,9 @@
 				E297DEB51AAB7F8100674699 /* ShopListItemTableViewCell.swift in Sources */,
 				E297DE7E1AAB67B700674699 /* ShopListViewController.swift in Sources */,
 				E297DEBB1AABF9E800674699 /* YahooLocal.swift in Sources */,
+				E297DEC51AAC7A9500674699 /* FreewordTableViewCell.swift in Sources */,
 				E297DE7C1AAB67B700674699 /* AppDelegate.swift in Sources */,
+				E297DEC31AAC78A900674699 /* SearchTopTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
