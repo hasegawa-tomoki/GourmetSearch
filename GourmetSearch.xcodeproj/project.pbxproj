@@ -18,6 +18,10 @@
 		E242A0D51AACF4A200BC6ACB /* PhotoListItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0D41AACF4A200BC6ACB /* PhotoListItemCollectionViewCell.swift */; };
 		E242A0D71AACF4CA00BC6ACB /* PhotoListItemCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0D61AACF4CA00BC6ACB /* PhotoListItemCollectionViewHeader.swift */; };
 		E242A0D91AACFBA000BC6ACB /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0D81AACFBA000BC6ACB /* PhotoDetailViewController.swift */; };
+		E242A0E31AAD0B6800BC6ACB /* Licenses.plist in Resources */ = {isa = PBXBuildFile; fileRef = E242A0E21AAD0B6800BC6ACB /* Licenses.plist */; };
+		E242A0E61AAD0E6500BC6ACB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0E51AAD0E6500BC6ACB /* AboutViewController.swift */; };
+		E242A0E81AAD106500BC6ACB /* LicenseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0E71AAD106500BC6ACB /* LicenseListViewController.swift */; };
+		E242A0EA1AAD124300BC6ACB /* LicenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242A0E91AAD124300BC6ACB /* LicenseDetailViewController.swift */; };
 		E297DE7C1AAB67B700674699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DE7B1AAB67B700674699 /* AppDelegate.swift */; };
 		E297DE7E1AAB67B700674699 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DE7D1AAB67B700674699 /* ShopListViewController.swift */; };
 		E297DE811AAB67B700674699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E297DE7F1AAB67B700674699 /* Main.storyboard */; };
@@ -76,6 +80,11 @@
 		E242A0D41AACF4A200BC6ACB /* PhotoListItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		E242A0D61AACF4CA00BC6ACB /* PhotoListItemCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListItemCollectionViewHeader.swift; sourceTree = "<group>"; };
 		E242A0D81AACFBA000BC6ACB /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		E242A0E21AAD0B6800BC6ACB /* Licenses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Licenses.plist; sourceTree = "<group>"; };
+		E242A0E51AAD0E6500BC6ACB /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E242A0E71AAD106500BC6ACB /* LicenseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseListViewController.swift; sourceTree = "<group>"; };
+		E242A0E91AAD124300BC6ACB /* LicenseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewController.swift; sourceTree = "<group>"; };
+		E242A0EC1AAD164100BC6ACB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E297DE761AAB67B700674699 /* GourmetSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E297DE7A1AAB67B700674699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E297DE7B1AAB67B700674699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +100,6 @@
 		E297DEA31AAB6A4A00674699 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/GourmetSearch-cayjaonliyhnyodwugfmcquzvmwd/Build/Products/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		E297DEA51AAB6A5000674699 /* AlamofireSwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireSwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/GourmetSearch-cayjaonliyhnyodwugfmcquzvmwd/Build/Products/Debug-iphoneos/AlamofireSwiftyJSON.framework"; sourceTree = "<group>"; };
 		E297DEA71AAB6A5400674699 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/GourmetSearch-cayjaonliyhnyodwugfmcquzvmwd/Build/Products/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		E297DEAD1AAB6B9400674699 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E297DEB41AAB7F8100674699 /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
 		E297DEBA1AABF9E800674699 /* YahooLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocal.swift; sourceTree = "<group>"; };
 		E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +169,16 @@
 			name = PhotoList;
 			sourceTree = "<group>";
 		};
+		E242A0E41AAD0E5400BC6ACB /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E242A0E51AAD0E6500BC6ACB /* AboutViewController.swift */,
+				E242A0E71AAD106500BC6ACB /* LicenseListViewController.swift */,
+				E242A0E91AAD124300BC6ACB /* LicenseDetailViewController.swift */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 		E297DE6D1AAB67B700674699 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +202,7 @@
 		E297DE781AAB67B700674699 /* GourmetSearch */ = {
 			isa = PBXGroup;
 			children = (
+				E242A0E41AAD0E5400BC6ACB /* About */,
 				E242A0D11AACF46000BC6ACB /* PhotoList */,
 				E242A0BC1AACB93100BC6ACB /* Tabs */,
 				E297DEB91AABF9C400674699 /* Common */,
@@ -203,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				E297DE7A1AAB67B700674699 /* Info.plist */,
+				E242A0E21AAD0B6800BC6ACB /* Licenses.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -313,6 +333,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				ja,
 			);
 			mainGroup = E297DE6D1AAB67B700674699;
 			productRefGroup = E297DE771AAB67B700674699 /* Products */;
@@ -332,6 +353,7 @@
 			files = (
 				E297DE811AAB67B700674699 /* Main.storyboard in Resources */,
 				E297DE861AAB67B700674699 /* LaunchScreen.xib in Resources */,
+				E242A0E31AAD0B6800BC6ACB /* Licenses.plist in Resources */,
 				E297DE831AAB67B700674699 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,11 +417,14 @@
 				E242A0D91AACFBA000BC6ACB /* PhotoDetailViewController.swift in Sources */,
 				E242A0C01AACB96F00BC6ACB /* FavoriteNavigationController.swift in Sources */,
 				E297DEC31AAC78A900674699 /* SearchTopTableViewController.swift in Sources */,
+				E242A0E61AAD0E6500BC6ACB /* AboutViewController.swift in Sources */,
 				E242A0C41AACCCA600BC6ACB /* LocationService.swift in Sources */,
 				E242A0D51AACF4A200BC6ACB /* PhotoListItemCollectionViewCell.swift in Sources */,
 				E242A0D31AACF47900BC6ACB /* PhotoListViewController.swift in Sources */,
 				E242A0D01AACEB8A00BC6ACB /* ShopPhoto.swift in Sources */,
 				E242A0BE1AACB95E00BC6ACB /* SearchNavigationController.swift in Sources */,
+				E242A0E81AAD106500BC6ACB /* LicenseListViewController.swift in Sources */,
+				E242A0EA1AAD124300BC6ACB /* LicenseDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +459,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E297DE851AAB67B700674699 /* Base */,
-				E297DEAD1AAB6B9400674699 /* ja */,
+				E242A0EC1AAD164100BC6ACB /* ja */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
