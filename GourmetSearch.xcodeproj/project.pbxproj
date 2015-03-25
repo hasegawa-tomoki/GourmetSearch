@@ -28,12 +28,6 @@
 		E297DE831AAB67B700674699 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E297DE821AAB67B700674699 /* Images.xcassets */; };
 		E297DE861AAB67B700674699 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E297DE841AAB67B700674699 /* LaunchScreen.xib */; };
 		E297DE921AAB67B700674699 /* GourmetSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DE911AAB67B700674699 /* GourmetSearchTests.swift */; };
-		E297DEA41AAB6A4A00674699 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E297DEA31AAB6A4A00674699 /* Alamofire.framework */; };
-		E297DEA61AAB6A5000674699 /* AlamofireSwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E297DEA51AAB6A5000674699 /* AlamofireSwiftyJSON.framework */; };
-		E297DEA81AAB6A5400674699 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E297DEA71AAB6A5400674699 /* SwiftyJSON.framework */; };
-		E297DEA91AAB6A9E00674699 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E297DEA71AAB6A5400674699 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E297DEAA1AAB6AA100674699 /* AlamofireSwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E297DEA51AAB6A5000674699 /* AlamofireSwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E297DEAB1AAB6AA400674699 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E297DEA31AAB6A4A00674699 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E297DEB51AAB7F8100674699 /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DEB41AAB7F8100674699 /* ShopListItemTableViewCell.swift */; };
 		E297DEBB1AABF9E800674699 /* YahooLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DEBA1AABF9E800674699 /* YahooLocal.swift */; };
 		E297DEC31AAC78A900674699 /* SearchTopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */; };
@@ -58,9 +52,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E297DEAB1AAB6AA400674699 /* Alamofire.framework in CopyFiles */,
-				E297DEAA1AAB6AA100674699 /* AlamofireSwiftyJSON.framework in CopyFiles */,
-				E297DEA91AAB6A9E00674699 /* SwiftyJSON.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +76,9 @@
 		E242A0E71AAD106500BC6ACB /* LicenseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseListViewController.swift; sourceTree = "<group>"; };
 		E242A0E91AAD124300BC6ACB /* LicenseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewController.swift; sourceTree = "<group>"; };
 		E242A0EC1AAD164100BC6ACB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E263B6041AC299AA00D3648D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/GourmetSearch-dzlagygblexlouatgdrkhucjuwwf/Build/Products/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		E263B6051AC299AA00D3648D /* AlamofireSwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireSwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/GourmetSearch-dzlagygblexlouatgdrkhucjuwwf/Build/Products/Debug-iphoneos/AlamofireSwiftyJSON.framework"; sourceTree = "<group>"; };
+		E263B6061AC299AA00D3648D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/GourmetSearch-dzlagygblexlouatgdrkhucjuwwf/Build/Products/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		E297DE761AAB67B700674699 /* GourmetSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E297DE7A1AAB67B700674699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E297DE7B1AAB67B700674699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,9 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E297DEA81AAB6A5400674699 /* SwiftyJSON.framework in Frameworks */,
-				E297DEA61AAB6A5000674699 /* AlamofireSwiftyJSON.framework in Frameworks */,
-				E297DEA41AAB6A4A00674699 /* Alamofire.framework in Frameworks */,
 				1621B6CC220B25F49FAF9A39 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +132,9 @@
 		55B8DC14813819EAECBA2EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E263B6041AC299AA00D3648D /* Alamofire.framework */,
+				E263B6051AC299AA00D3648D /* AlamofireSwiftyJSON.framework */,
+				E263B6061AC299AA00D3648D /* SwiftyJSON.framework */,
 				E297DEA71AAB6A5400674699 /* SwiftyJSON.framework */,
 				E297DEA51AAB6A5000674699 /* AlamofireSwiftyJSON.framework */,
 				E297DEA31AAB6A4A00674699 /* Alamofire.framework */,
@@ -553,6 +547,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GourmetSearch-cayjaonliyhnyodwugfmcquzvmwd/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GourmetSearch-dzlagygblexlouatgdrkhucjuwwf/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = GourmetSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -571,6 +566,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GourmetSearch-cayjaonliyhnyodwugfmcquzvmwd/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GourmetSearch-dzlagygblexlouatgdrkhucjuwwf/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = GourmetSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
