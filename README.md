@@ -26,3 +26,13 @@ $ git submodule update --init --recursive
 
 masterブランチの内容は Xcode 6.3 (Swift 1.2) での実行を前提としたコードに修正しています。 書籍掲載バージョンは swift11 ブランチを参照してください。
 
+Swift 1.2 で動作させる場合、前述のライブラリ clone 後に以下の様に各モジュールを更新してください。
+
+```
+$ cd Alamofire-SwiftyJSON
+$ cd Alamofire/
+$ git pull origin master
+$ cd ../SwiftyJSON/
+$ git pull origin master
+```
+
