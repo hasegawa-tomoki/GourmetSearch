@@ -161,7 +161,7 @@ public class YahooLocalSearch {
 			YLSLoadStartNotification, object: nil)
 		
 		// APIリクエスト実行
-		Alamofire.request(.GET, apiUrl, parameters: params).responseSwiftyJSON {
+		Alamofire.request(.GET, apiUrl, parameters: params).responseSwiftyJSON ({
 			// リクエストが完了した時に実行されるクロージャ
 			(request, response, json, error) -> Void in
 			
@@ -246,7 +246,7 @@ public class YahooLocalSearch {
 			// API実行終了を通知する
 			NSNotificationCenter.defaultCenter().postNotificationName(
 				self.YLSLoadCompleteNotification, object: nil)
-		}
+		})
 	}
 	
 	func sortByGid(){

@@ -56,7 +56,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 			// Storyboardで設定したセルを取得する
 			let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
 				"PhotoListItem",
-				forIndexPath: indexPath) as PhotoListItemCollectionViewCell
+				forIndexPath: indexPath) as! PhotoListItemCollectionViewCell
 			
 			// 指定されたインデックスの店舗IDを取得する
 			if let gid = ShopPhoto.sharedInstance?.gids[indexPath.section] {
@@ -77,7 +77,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 				let header = collectionView.dequeueReusableSupplementaryViewOfKind(
 					UICollectionElementKindSectionHeader,
 					withReuseIdentifier: "PhotoListHeader",
-					forIndexPath: indexPath) as PhotoListItemCollectionViewHeader
+					forIndexPath: indexPath) as! PhotoListItemCollectionViewHeader
 				
 				// 指定されたインデックスの店舗IDを取得する
 				if let gid = ShopPhoto.sharedInstance?.gids[indexPath.section] {
@@ -103,7 +103,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "PushPhotoDetail" {
-			let vc = segue.destinationViewController as PhotoDetailViewController
+			let vc = segue.destinationViewController as! PhotoDetailViewController
 			if let indexPath = sender as? NSIndexPath {
 				if let gid = ShopPhoto.sharedInstance?.gids[indexPath.section] {
 					if let image = ShopPhoto.sharedInstance?.image(gid, index: indexPath.row)

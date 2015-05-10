@@ -125,7 +125,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	// MARK: - Navigation
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "PushMapDetail" {
-			let vc = segue.destinationViewController as ShopMapDetailViewController
+			let vc = segue.destinationViewController as! ShopMapDetailViewController
 			vc.shop = shop
 		}
 	}

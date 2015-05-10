@@ -123,7 +123,7 @@ UIGestureRecognizerDelegate {
 				switch indexPath.row {
 				case 0:
 					let cell = tableView.dequeueReusableCellWithIdentifier("Freeword",
-						forIndexPath: indexPath) as FreewordTableViewCell
+						forIndexPath: indexPath) as! FreewordTableViewCell
 					// UITextFieldへの参照を保存しておく
 					freeword = cell.freeword
 					// UITextFieldDelegateを自身に設定
@@ -162,11 +162,11 @@ UIGestureRecognizerDelegate {
 	// MARK: - Navigation
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "PushShopList" {
-			let vc = segue.destinationViewController as ShopListViewController
+			let vc = segue.destinationViewController as! ShopListViewController
 			vc.yls.condition.query = freeword?.text
 		}
 		if segue.identifier == "PushShopListFromHere" {
-			let vc = segue.destinationViewController as ShopListViewController
+			let vc = segue.destinationViewController as! ShopListViewController
 			vc.yls.condition.lat = self.here?.lat
 			vc.yls.condition.lon = self.here?.lon
 		}

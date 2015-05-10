@@ -206,7 +206,7 @@ class ShopListViewController: UIViewController,
 			if indexPath.section == 0 {
 				if indexPath.row < yls.shops.count {
 					// rowが店舗数以下なら店舗セルを返す
-					let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as ShopListItemTableViewCell
+					let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as! ShopListItemTableViewCell
 					cell.shop = yls.shops[indexPath.row]
 					// まだ残りがあって、現在の列の下の店舗が3つ以下になったら追加取得
 					if yls.shops.count < yls.total {
@@ -224,7 +224,7 @@ class ShopListViewController: UIViewController,
 	// MARK: - Navigation
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "PushShopDetail" {
-			let vc = segue.destinationViewController as ShopDetailViewController
+			let vc = segue.destinationViewController as! ShopDetailViewController
 			if let indexPath = sender as? NSIndexPath {
 				vc.shop = yls.shops[indexPath.row]
 			}

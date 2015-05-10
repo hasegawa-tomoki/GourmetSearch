@@ -6,7 +6,7 @@ public struct Favorite {
 	public static func load(){
 		let ud = NSUserDefaults.standardUserDefaults()
 		ud.registerDefaults(["favorites": [String]()])
-		favorites = ud.objectForKey("favorites") as [String]
+		favorites = ud.objectForKey("favorites") as! [String]
 	}
 	
 	public static func save(){

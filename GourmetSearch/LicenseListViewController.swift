@@ -48,7 +48,7 @@ class LicenseListViewController: UIViewController
 	func tableView(tableView: UITableView,
 		cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 			
-			let cell = tableView.dequeueReusableCellWithIdentifier("Software") as	UITableViewCell
+			let cell = tableView.dequeueReusableCellWithIdentifier("Software") as!	UITableViewCell
 			cell.textLabel?.text = softwares[indexPath.row].name
 			return cell
 	}
@@ -62,7 +62,7 @@ class LicenseListViewController: UIViewController
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "PushLicenseDetail" {
-			let vc = segue.destinationViewController as LicenseDetailViewController
+			let vc = segue.destinationViewController as! LicenseDetailViewController
 			if let indexPath = sender as? NSIndexPath {
 				vc.name = softwares[indexPath.row].name
 				vc.license = softwares[indexPath.row].license

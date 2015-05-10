@@ -21,7 +21,7 @@ public class ShopPhoto {
 			.UserDomainMask, true)
 		// 基本的には成功するが念のため要素数をチェックしてから使う
 		if paths.count > 0 {
-			path = paths[0] as String
+			path = paths[0] as! String
 		} else {
 			path = ""
 			return nil
