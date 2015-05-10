@@ -22,4 +22,7 @@ $ git submodule update --init --recursive
 上記の設定でコンパイルは可能ですが、店舗検索のためにはYahoo!ローカルサーチAPIのアプリケーションIDを設定する必要があります。
 本書P286ページを参照してアプリケーションIDを取得し、YahooLocal.swiftの113行目に設定してください。
 
+## Swift 1.2 対応
+
+masterブランチの内容は Xcode 6.3 (Swift 1.2) での実行を前提としたコードに修正しています。 書籍掲載バージョンは swift11 ブランチを参照してください。
 
