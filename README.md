@@ -36,3 +36,13 @@ $ cd ../SwiftyJSON/
 $ git pull origin master
 ```
 
+## SwiftベースのライブラリをCocoaPodsで
+
+CocoaPods 0.36以降ではSwiftベースのライブラリをCocoaPodsで管理することが出来る様になりました。
+
+swift-libs-cocoapodsブランチの内容はSwiftベースのライブラリをCocoaPods経由で管理する例です。
+iOS8以降の対応で良い場合はこの形でライブラリを管理するのが良いでしょう。
+
+なお、Alamofire-SwiftyJSONがCocoaPods対応していないため、この版ではAlamofire-SwiftyJSONを
+使用しない形に変更しています。
+
