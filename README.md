@@ -3,7 +3,7 @@
 
 2015年5月現在の Xcode 最新版、Xcode 6.3 では搭載されるSwiftのバージョンが 1.2 となり、書籍掲載の 1.1 とは若干文法が変更されました。以下の手順は Xcode 6.3 で、ここからダウンロードしたソースコードをコンパイルするための手順です。
 
-Xcode 6.2で書籍の手順で学習を進める場合の手順については [Swift11.md](https://github.com/hasegawa-tomoki/GourmetSearch/blob/master/Swift11.md) を参照してください。
+Xcode 6.3で書籍の手順で学習を進める場合の手順については [Swift11.md](https://github.com/hasegawa-tomoki/GourmetSearch/blob/master/Swift11.md) を参照してください。
 
 
 ## このサンプルソースのコンパイル手順
