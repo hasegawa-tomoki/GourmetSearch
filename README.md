@@ -45,4 +45,16 @@ $ git clone https://github.com/hasegawa-tomoki/GourmetSearch.git
 $ pod install
 ```
 
+Swift のライブラリを CocoaPods で管理する場合、Objective-C のライブラリ同様、以下の様に Podfile に記述します。
+2行目の表記は Swift のライブラリを管理する場合に必要です。
+
+```
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'SDWebImage'
+pod 'Alamofire', '~> 1.2'
+pod "SwiftyJSON", ">= 2.2"
+```
+
 なお、``Alamofire-SwiftyJSON`` がCocoaPods対応していないため、``Alamofire-SwiftyJSON`` を使用しない形に変更する必要があります。詳細は書籍のP349 リスト06-12を参照してください。
