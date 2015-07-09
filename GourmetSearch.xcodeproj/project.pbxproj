@@ -76,12 +76,6 @@
 		E242A0E71AAD106500BC6ACB /* LicenseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseListViewController.swift; sourceTree = "<group>"; };
 		E242A0E91AAD124300BC6ACB /* LicenseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewController.swift; sourceTree = "<group>"; };
 		E242A0EC1AAD164100BC6ACB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		E263B6041AC299AA00D3648D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/GourmetSearch-dzlagygblexlouatgdrkhucjuwwf/Build/Products/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
-		E263B6051AC299AA00D3648D /* AlamofireSwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireSwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/GourmetSearch-dzlagygblexlouatgdrkhucjuwwf/Build/Products/Debug-iphoneos/AlamofireSwiftyJSON.framework"; sourceTree = "<group>"; };
-		E263B6061AC299AA00D3648D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/GourmetSearch-dzlagygblexlouatgdrkhucjuwwf/Build/Products/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		E26EBA4A1AFF503200091DA4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/GourmetSearch-cahcwjitjmtqmbgwwnceyeqqvqwp/Build/Products/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
-		E26EBA4B1AFF503200091DA4 /* AlamofireSwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireSwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/GourmetSearch-cahcwjitjmtqmbgwwnceyeqqvqwp/Build/Products/Debug-iphoneos/AlamofireSwiftyJSON.framework"; sourceTree = "<group>"; };
-		E26EBA4C1AFF503200091DA4 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/GourmetSearch-cahcwjitjmtqmbgwwnceyeqqvqwp/Build/Products/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		E297DE761AAB67B700674699 /* GourmetSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E297DE7A1AAB67B700674699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E297DE7B1AAB67B700674699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,19 +88,11 @@
 		E297DE911AAB67B700674699 /* GourmetSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetSearchTests.swift; sourceTree = "<group>"; };
 		E297DE9B1AAB690A00674699 /* GourmetSearch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GourmetSearch-Bridging-Header.h"; sourceTree = "<group>"; };
 		E297DE9C1AAB690A00674699 /* GourmetSearchTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GourmetSearchTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		E297DEA31AAB6A4A00674699 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/GourmetSearch-cayjaonliyhnyodwugfmcquzvmwd/Build/Products/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
-		E297DEA51AAB6A5000674699 /* AlamofireSwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireSwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/GourmetSearch-cayjaonliyhnyodwugfmcquzvmwd/Build/Products/Debug-iphoneos/AlamofireSwiftyJSON.framework"; sourceTree = "<group>"; };
-		E297DEA71AAB6A5400674699 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/GourmetSearch-cayjaonliyhnyodwugfmcquzvmwd/Build/Products/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		E297DEB41AAB7F8100674699 /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
 		E297DEBA1AABF9E800674699 /* YahooLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocal.swift; sourceTree = "<group>"; };
 		E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
 		E297DEC41AAC7A9500674699 /* FreewordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreewordTableViewCell.swift; sourceTree = "<group>"; };
 		E297DECC1AACA00E00674699 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
-		E2BDB9561B4EEFA300BFB0A3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Alamofire-SwiftyJSON/Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
-		E2BDB9571B4EEFA300BFB0A3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Alamofire-SwiftyJSON/SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		E2BDB9681B4EF12600BFB0A3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Alamofire-SwiftyJSON/Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
-		E2BDB9691B4EF12600BFB0A3 /* AlamofireSwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireSwiftyJSON.framework; path = "Alamofire-SwiftyJSON/build/Debug-iphoneos/AlamofireSwiftyJSON.framework"; sourceTree = "<group>"; };
-		E2BDB96A1B4EF12600BFB0A3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Alamofire-SwiftyJSON/SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,20 +126,6 @@
 		55B8DC14813819EAECBA2EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2BDB9681B4EF12600BFB0A3 /* Alamofire.framework */,
-				E2BDB9691B4EF12600BFB0A3 /* AlamofireSwiftyJSON.framework */,
-				E2BDB96A1B4EF12600BFB0A3 /* SwiftyJSON.framework */,
-				E2BDB9561B4EEFA300BFB0A3 /* Alamofire.framework */,
-				E2BDB9571B4EEFA300BFB0A3 /* SwiftyJSON.framework */,
-				E26EBA4A1AFF503200091DA4 /* Alamofire.framework */,
-				E26EBA4B1AFF503200091DA4 /* AlamofireSwiftyJSON.framework */,
-				E26EBA4C1AFF503200091DA4 /* SwiftyJSON.framework */,
-				E263B6041AC299AA00D3648D /* Alamofire.framework */,
-				E263B6051AC299AA00D3648D /* AlamofireSwiftyJSON.framework */,
-				E263B6061AC299AA00D3648D /* SwiftyJSON.framework */,
-				E297DEA71AAB6A5400674699 /* SwiftyJSON.framework */,
-				E297DEA51AAB6A5000674699 /* AlamofireSwiftyJSON.framework */,
-				E297DEA31AAB6A4A00674699 /* Alamofire.framework */,
 				E157B76FB20832E043FF94E7 /* libPods.a */,
 			);
 			name = Frameworks;
