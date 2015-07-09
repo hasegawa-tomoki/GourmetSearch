@@ -102,6 +102,11 @@
 		E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
 		E297DEC41AAC7A9500674699 /* FreewordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreewordTableViewCell.swift; sourceTree = "<group>"; };
 		E297DECC1AACA00E00674699 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
+		E2BDB9561B4EEFA300BFB0A3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Alamofire-SwiftyJSON/Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		E2BDB9571B4EEFA300BFB0A3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Alamofire-SwiftyJSON/SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		E2BDB9681B4EF12600BFB0A3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Alamofire-SwiftyJSON/Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		E2BDB9691B4EF12600BFB0A3 /* AlamofireSwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireSwiftyJSON.framework; path = "Alamofire-SwiftyJSON/build/Debug-iphoneos/AlamofireSwiftyJSON.framework"; sourceTree = "<group>"; };
+		E2BDB96A1B4EF12600BFB0A3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Alamofire-SwiftyJSON/SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +140,11 @@
 		55B8DC14813819EAECBA2EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2BDB9681B4EF12600BFB0A3 /* Alamofire.framework */,
+				E2BDB9691B4EF12600BFB0A3 /* AlamofireSwiftyJSON.framework */,
+				E2BDB96A1B4EF12600BFB0A3 /* SwiftyJSON.framework */,
+				E2BDB9561B4EEFA300BFB0A3 /* Alamofire.framework */,
+				E2BDB9571B4EEFA300BFB0A3 /* SwiftyJSON.framework */,
 				E26EBA4A1AFF503200091DA4 /* Alamofire.framework */,
 				E26EBA4B1AFF503200091DA4 /* AlamofireSwiftyJSON.framework */,
 				E26EBA4C1AFF503200091DA4 /* SwiftyJSON.framework */,
@@ -555,6 +565,9 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GourmetSearch-cayjaonliyhnyodwugfmcquzvmwd/Build/Products/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GourmetSearch-dzlagygblexlouatgdrkhucjuwwf/Build/Products/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GourmetSearch-cahcwjitjmtqmbgwwnceyeqqvqwp/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/Alamofire-SwiftyJSON/Alamofire/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Alamofire-SwiftyJSON/SwiftyJSON/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Alamofire-SwiftyJSON/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = GourmetSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -575,6 +588,9 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GourmetSearch-cayjaonliyhnyodwugfmcquzvmwd/Build/Products/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GourmetSearch-dzlagygblexlouatgdrkhucjuwwf/Build/Products/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GourmetSearch-cahcwjitjmtqmbgwwnceyeqqvqwp/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/Alamofire-SwiftyJSON/Alamofire/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Alamofire-SwiftyJSON/SwiftyJSON/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Alamofire-SwiftyJSON/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = GourmetSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

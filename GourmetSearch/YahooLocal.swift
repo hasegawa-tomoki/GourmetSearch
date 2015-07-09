@@ -1,7 +1,6 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import AlamofireSwiftyJSON
 
 public struct Shop: Printable {
 	public var gid: String? = nil
@@ -161,9 +160,13 @@ public class YahooLocalSearch {
 			YLSLoadStartNotification, object: nil)
 		
 		// APIリクエスト実行
-		Alamofire.request(.GET, apiUrl, parameters: params).responseSwiftyJSON ({
+		Alamofire.request(.GET, apiUrl, parameters: params).response {
 			// リクエストが完了した時に実行されるクロージャ
-			(request, response, json, error) -> Void in
+			(request, response, data, error) -> Void in
+			var json = JSON.nullJSON
+			if error == nil && data != nil && data is NSData {
+				json = SwiftyJSON.JSON(data: data! as! NSData)
+			}
 			
 			// エラーがあれば終了
 			if error != nil {
@@ -246,7 +249,7 @@ public class YahooLocalSearch {
 			// API実行終了を通知する
 			NSNotificationCenter.defaultCenter().postNotificationName(
 				self.YLSLoadCompleteNotification, object: nil)
-		})
+		}
 	}
 	
 	func sortByGid(){
