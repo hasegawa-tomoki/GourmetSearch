@@ -1,10 +1,10 @@
 # GourmetSearch
 書籍「[TECHNICAL MASTER はじめてのiOSアプリ開発　Swift対応版](http://www.amazon.co.jp/dp/4798043656)」の Chapter 6〜8 のサンプルプログラムです。
 
-2015年5月現在の Xcode 最新版、Xcode 6.3 では搭載されるSwiftのバージョンが 1.2 となり、書籍掲載の 1.1 とは若干文法が変更されました。以下の手順は Xcode 6.3 で、ここからダウンロードしたソースコードをコンパイルするための手順です。
+このドキュメントでは最新のXcodeを使用して書籍掲載の手順で学習を進める方法を解説しています。
 
-Xcode 6.3で書籍の手順で学習を進める場合の手順については [Swift11.md](https://github.com/hasegawa-tomoki/GourmetSearch/blob/master/Swift11.md) を参照してください。
-
+ 現時点でこの方法を選択するメリットは無く、Swift ベースのライブラリにも CocoaPods を使うことを勧めします。
+ Swift ベースのライブラリにも CocoaPods を使う詳細な手順は [README.md](https://github.com/hasegawa-tomoki/GourmetSearch/blob/master/README.md) を参照してください。
 
 ## このサンプルソースのコンパイル手順
 
@@ -83,6 +83,6 @@ pod 'Alamofire', '~> 1.2'
 pod "SwiftyJSON", ">= 2.2"
 ```
 
-書籍の手順もiOS8以降を対象としているため、2015年5月現在は、CocoaPods を利用してライブラリを管理することをお勧めします。
+ 書籍の手順もiOS8以降を対象としているため、2015年7月現在では、CocoaPods を利用してライブラリを管理することをお勧めします。
 
-なお、``Alamofire-SwiftyJSON`` がCocoaPods対応していないため、``Alamofire-SwiftyJSON`` を使用しない形に変更する必要があります。詳細は書籍のP349 リスト06-12を参照してください。
+ 詳細な手順は [README.md](https://github.com/hasegawa-tomoki/GourmetSearch/blob/master/README.md) を参照してください。
