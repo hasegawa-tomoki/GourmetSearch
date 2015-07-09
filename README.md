@@ -14,7 +14,7 @@
 
 ```
 $ cd ~/Documents
-$ git clone https://github.com/hasegawa-tomoki/GourmetSearch.git
+$ git clone -b no-cocoapods https://github.com/hasegawa-tomoki/GourmetSearch.git
 ```
 
 ### ライブラリの clone
