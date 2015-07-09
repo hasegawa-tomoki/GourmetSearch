@@ -29,6 +29,7 @@ $ git submodule update --init --recursive
 1. メニューから ``Product`` → ``Destination`` → ``iOS Simulator`` → ``iPhone 6`` を選択する。
 2. メニューから ``Product`` → ``Scheme`` → ``Alamofire`` を選択し、[Command] + [B]でコンパイルする。
 3. 同様に ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` もコンパイルする。
-4. 1. と同様に ``Product`` → ``Destination`` → ``iOS Device`` を選択し、``Alamofire``, ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` をコンパイルする。
-5. プロジェクトナビゲータから ``GourmetSearch`` を選択、``TARGETS`` → ``GourmetSearch`` を選択して ``Build Phases`` タブから、``Link Binary With Libraries`` と ``Copy Files`` 欄から ``Alamofire``, ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` を削除し、本書P300を参照して再度 ``Copy Files`` と ``Link Binary With Libraries`` を設定する。
+4. プロジェクトナビゲータから ``Alamofire-SwiftyJSON`` → ``SwiftyJSON.xcodeproj`` を選択、 ``PROJECT`` → ``SwiftyJSON`` を選択して、``Build Settings``タブから ``Code Signing`` の ``Code Signing Identity`` 配下の、``Debug``, ``Release`` 欄がそれぞれ ``iOS Developer``, ``iOS Distribution`` に設定されていることを確認する。
+5. 1. と同様に ``Product`` → ``Destination`` → ``iOS Device`` を選択し、``Alamofire``, ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` をコンパイルする。
+6. プロジェクトナビゲータから ``GourmetSearch`` を選択、``TARGETS`` → ``GourmetSearch`` を選択して ``Build Phases`` タブから、``Link Binary With Libraries`` と ``Copy Files`` 欄から ``Alamofire``, ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` を削除し、本書P300を参照して再度 ``Copy Files`` と ``Link Binary With Libraries`` を設定する。
 
