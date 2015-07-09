@@ -61,6 +61,11 @@ pod "SwiftyJSON", ">= 2.2"
 
 ## Swift 1.2
 
- Xcode 6.4 に内蔵されている Swift は、Swift 1.2 です。
- 書籍で使用している Xcode 6.1.1 に内蔵されている Swift 1.1 からいくつかの仕様変更が加えられています。
- 特に、P173で触れている通り、ダウンキャスト演算子 ``as`` を ``as!`` と表記する必要がありますので適宜読み替えてください
+P173ページの記述の通り、Xcode 6.4 に内蔵されている Swift 1.2 では Swift 1.1 で利用していた``as``によるダウンキャストは``as!``と表記する必要があります。
+
+書籍の通りにプログラムを入力するとXcodeのエラーが以下の様に表示されます。
+
+``'AnyObject?' is not convertible to '〜'; did you mean to use 'as!' to force downcast?``
+
+このとき、指摘の通りに ``as`` → ``as!`` と変更することで Swift 1.2 で実行可能です。
+

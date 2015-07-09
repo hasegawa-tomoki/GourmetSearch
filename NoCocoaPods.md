@@ -26,7 +26,7 @@ $ cd GourmetSearch
 $ git submodule update --init --recursive
 ```
 
-続いて、AlamofireとSwiftyJSONを更新します。
+続いて、AlamofireとSwiftyJSONを更新します。この操作で Swift 1.2 対応の Alamofire, SwiftyJSON がダウンロードされます。
 
 ```
 $ cd Alamofire-SwiftyJSON
@@ -56,10 +56,16 @@ $ git pull origin master
 4. 1. と同様に ``Product`` → ``Destination`` → ``iOS Device`` を選択し、``Alamofire``, ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` をコンパイルする。
 5. プロジェクトナビゲータから ``GourmetSearch`` を選択、``TARGETS`` → ``GourmetSearch`` を選択して ``Build Phases`` タブから、``Link Binary With Libraries`` と ``Copy Files`` 欄から ``Alamofire``, ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` を削除し、本書P300を参照して再度 ``Copy Files`` と ``Link Binary With Libraries`` を設定する。
 
-
 ## Swift 1.2
 
- Xcode 6.4 に内蔵されている Swift は、Swift 1.2 です。
- 書籍で使用している Xcode 6.1.1 に内蔵されている Swift 1.1 からいくつかの仕様変更が加えられています。
- 特に、P173で触れている通り、ダウンキャスト演算子 ``as`` を ``as!`` と表記する必要がありますので適宜読み替えてください
-。
+P173ページの記述の通り、Xcode 6.4 に内蔵されている Swift 1.2 では Swift 1.1 で利用していた``as``によるダウンキャストは``as!``と表記する必要があります。
+
+書籍の通りにプログラムを入力するとXcodeのエラーが以下の様に表示されます。
+
+``'AnyObject?' is not convertible to '〜'; did you mean to use 'as!' to force downcast?``
+
+このとき、指摘の通りに ``as`` → ``as!`` と変更することで Swift 1.2 で実行可能です。
+
+また、Swift 1.2 に伴い、Alamofireを使用する場合の表記も若干変更されています。
+
+```

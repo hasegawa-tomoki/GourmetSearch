@@ -1,79 +1,45 @@
-# 書籍の Xcode 6.4 対応
+# Xcode 6.1.1 対応プログラム
 
-書籍の手順を Xcode 6.4 で実施する場合、以下を参照して読み進めて下さい。
+書籍に掲載された環境 Xcodd 6.1.1 でここからサンプルソースを clone する場合、以下を参照して読み進めて下さい。
 
-## ライブラリの更新
+## このサンプルソースのコンパイル手順
 
-本書で使用しているライブラリ、 ``Alamoffire``, ``SwiftyJSON`` は、 ``Alamofire-SwiftyJSON`` ライブラリから参照されています。この参照が更新されていないため、``Alamofire``, ``SwiftyJSON``を手動で更新する必要があります。
+### ソースの clone
 
-書籍のP298〜P299の操作の後で、以下の様にライブラリを更新します。
-
-```
-$ cd ~/Documents/GourmetSearch/
-$ cd Alamofire-SwiftyJSON
-$ cd Alamofire
-$ git pull origin master
-$ cd ../SwiftyJSON
-$ git pull origin master
-```
-
-## Alamofireの使用法の変更
-
-Swift 1.2では、``Alamofire`` と ``Alamofire-SwiftyJSON`` 使用の際の書式を少し修正する必要があります。
-
-Swift 1.1 では以下の様にこれらのライブラリを使用していました。
-
-```
-Alamofire.request(.GET, apiUrl, parameters: params).responseSwiftyJSON {
-  // 受信完了の処理
-}
-```
-
-これに対して、Swift 1.2 では以下の様に``()``を追加する必要があります。
-
-```
-Alamofire.request(.GET, apiUrl, parameters: params).responseSwiftyJSON ({
-  // 受信完了の処理
-})
-```
-
-## プログラムの修正（読み替え）
-
-P173ページの記述の通り、Swift 1.1 で利用していた``as``によるダウンキャストは``as!``と表記する必要があります。
-
-書籍の通りにプログラムを入力するとXcodeのエラーが以下の様に表示されます。
-
-``'AnyObject?' is not convertible to '〜'; did you mean to use 'as!' to force downcast?``
-
-このとき、指摘の通りに ``as`` → ``as!`` と変更することで Swift 1.2 で実行可能です。
-
-## SwiftベースのライブラリをCocoaPodsで管理する
-
-CocoaPods 0.36 以降ではSwiftベースのライブラリをCocoaPodsで管理することができる様になりました。
-
-swift-libs-cocoapodsブランチの内容はSwiftベースのライブラリをCocoaPods経由で管理する例です。以下の様に clone, checkout します。
+リポジトリを以下の様に clone します。
 
 ```
 $ cd ~/Documents
-$ git clone https://github.com/hasegawa-tomoki/GourmetSearch.git
+$ git clone -b swift11 https://github.com/hasegawa-tomoki/GourmetSearch.git
+```
+
+### ライブラリの clone
+
+リポジトリを clone したら以下のコマンドでライブラリも clone されます。
+
+```
 $ cd GourmetSearch
-$ git checkout swift-libs-cocoapods
+$ git submodule update --init --recursive
 ```
 
-Swift のライブラリを CocoaPods で管理する場合、Objective-C のライブラリ同様、以下の様に Podfile に記述します。
+``GourmetSearch.xcworkspace``を開いてプログラムをコンパイルすることができます。
 
-* 2行目の表記は Swift のライブラリを管理する場合に必要です。
-* iOS 8 以降でのみ使用可能です。
+### プロジェクト設定
 
-```
-platform :ios, '8.0'
-use_frameworks!
+このリポジトリのワークスペースファイルからは``Copy FilesとLink Binary With Libraries``の設定を削除しています。
+本書P300を参照して``Copy Files``と``Link Binary With Libraries``の設定をしてください。
 
-pod 'SDWebImage'
-pod 'Alamofire', '~> 1.2'
-pod "SwiftyJSON", ">= 2.2"
-```
+### アプリケーションIDの設定
 
-書籍の手順もiOS8以降を対象としているため、2015年5月現在は、CocoaPods を利用してライブラリを管理することをお勧めします。
+上記の設定でコンパイルは可能ですが、店舗検索のためにはYahoo!ローカルサーチAPIのアプリケーションIDを設定する必要があります。
+本書P286ページを参照してアプリケーションIDを取得し、``YahooLocal.swift``の113行目に設定してください。
 
-なお、``Alamofire-SwiftyJSON`` がCocoaPods対応していないため、``Alamofire-SwiftyJSON`` を使用しない形に変更する必要があります。詳細は書籍のP349 リスト06-12を参照してください。
+### コンパイルに失敗する場合
+
+コンパイルに失敗する場合、以下の手順でライブラリの再ビルドをしてみてください。
+
+1. メニューから ``Product`` → ``iOS Simulator`` → ``iPhone 6`` を選択する。
+2. メニューから ``Product`` → ``Scheme`` → ``Alamofire`` を選択し、[Commanc] + [B]でコンパイルする。
+3. 同様に ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` もコンパイルする。
+4. 1. と同様に ``Product`` → ``Destination`` → ``iOS Device`` を選択し、``Alamofire``, ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` をコンパイルする。
+5. プロジェクトナビゲータから ``GourmetSearch`` を選択、``TARGETS`` → ``GourmetSearch`` を選択して ``Build Phases`` タブから、``Link Binary With Libraries`` と ``Copy Files`` 欄から ``Alamofire``, ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` を削除し、本書P300を参照して再度 ``Copy Files`` と ``Link Binary With Libraries`` を設定する。
