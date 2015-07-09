@@ -26,7 +26,7 @@ $ git submodule update --init --recursive
 
 コンパイルに失敗する場合、以下の手順でライブラリの再ビルドをしてみてください。
 
-1. メニューから ``Product`` → ``iOS Simulator`` → ``iPhone 6`` を選択する。
+1. メニューから ``Product`` → ``Destination`` → ``iOS Simulator`` → ``iPhone 6`` を選択する。
 2. メニューから ``Product`` → ``Scheme`` → ``Alamofire`` を選択し、[Commanc] + [B]でコンパイルする。
 3. 同様に ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` もコンパイルする。
 4. 1. と同様に ``Product`` → ``Destination`` → ``iOS Device`` を選択し、``Alamofire``, ``SwiftyJSON``, ``Alamofire-SwiftyJSON`` をコンパイルする。
