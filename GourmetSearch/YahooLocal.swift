@@ -1,7 +1,6 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import AlamofireSwiftyJSON
 
 public struct Shop: Printable {
 	public var gid: String? = nil
@@ -161,9 +160,14 @@ public class YahooLocalSearch {
 			YLSLoadStartNotification, object: nil)
 		
 		// APIリクエスト実行
-		Alamofire.request(.GET, apiUrl, parameters: params).responseSwiftyJSON ({
+		Alamofire.request(.GET, apiUrl, parameters: params).response {
 			// リクエストが完了した時に実行されるクロージャ
-			(request, response, json, error) -> Void in
+			(request, response, data, error) -> Void in
+			
+			var json = JSON.nullJSON;
+			if error == nil && data != nil && data is NSData {
+				json = SwiftyJSON.JSON(data: data! as! NSData)
+			}
 			
 			// エラーがあれば終了
 			if error != nil {
@@ -246,22 +250,22 @@ public class YahooLocalSearch {
 			// API実行終了を通知する
 			NSNotificationCenter.defaultCenter().postNotificationName(
 				self.YLSLoadCompleteNotification, object: nil)
-		})
-	}
-	
-	func sortByGid(){
-		var newShops = [Shop]()
-		// 検索条件の店舗ID（Gid）一覧文字列を「,」で分割して配列に戻す
-		if let gids = self.condition.gid?.componentsSeparatedByString(",") {
-			// 店舗ID（Gid）配列でループしてその順番に配列を並び替える
-			for gid in gids {
-				let filtered = shops.filter{ $0.gid == gid }
-				if filtered.count > 0 {
-					newShops.append(filtered[0])
-				}
+		}
+}
+
+func sortByGid(){
+	var newShops = [Shop]()
+	// 検索条件の店舗ID（Gid）一覧文字列を「,」で分割して配列に戻す
+	if let gids = self.condition.gid?.componentsSeparatedByString(",") {
+		// 店舗ID（Gid）配列でループしてその順番に配列を並び替える
+		for gid in gids {
+			let filtered = shops.filter{ $0.gid == gid }
+			if filtered.count > 0 {
+				newShops.append(filtered[0])
 			}
 		}
-		// 新しい配列を返す
-		shops = newShops 
 	}
+	// 新しい配列を返す
+	shops = newShops
+}
 }

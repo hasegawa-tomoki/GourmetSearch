@@ -4,12 +4,26 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-SDWebImage.xcscheme</key>
+		<key>Pods-Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>Pods-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
@@ -21,12 +35,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>20D73887CCF32EFA8ED19AF1</key>
+		<key>0349B82807B8A9DC23C393AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D776E8141A9A99B64F4F8CD</key>
+		<key>8247BF568C6E083DE1590EC9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A413F00D36EE6DB6003B9B71</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA647EEE897ACBE4835363D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
