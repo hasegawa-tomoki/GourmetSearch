@@ -74,7 +74,7 @@ pod "SwiftyJSON", ">= 2.2"
 
 なお、Alamofire-SwiftyJSON がCocoaPods対応していないため、Alamofire-SwiftyJSON を使用しない形に変更する必要があります。詳細は書籍のP349 リスト06-12を参照してください。
 
-## SwiftのライブラリにもCocoaPodsを使う場合の書籍の手順変更
+## 書籍の手順変更
 
 SwiftのライブラリにもCocoaPodsを使う場合、書籍を以下の様に読み替えます。
 
