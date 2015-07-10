@@ -84,6 +84,7 @@ SwiftのライブラリにもCocoaPodsを使う場合、書籍を以下の様に
   * その代わりに以下の手順で Swift のライブラリを CocoaPods で追加する。
     * ``Podfile``に上記の様に ``use_frameworks!`` 行と、Alamofire, SwiftyJSONの行を追加。
     * ``pod install`` を実行
+* Alamofire-SwiftyJSON が CocoaPods に対応していないため、P349を参考に Alamofire-SwiftyJSON を使わない形で Alamofire を使用する。
 
 ## Swift 1.2
 
