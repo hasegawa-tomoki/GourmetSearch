@@ -104,3 +104,7 @@ $ git clone https://github.com/hasegawa-tomoki/GourmetSearch.git
 $ cd GourmetSearch
 $ pod install
 ```
+
+## アプリケーションIDの設定
+
+上記の設定でコンパイルは可能ですが、店舗検索のためにはYahoo!ローカルサーチAPIのアプリケーションIDを設定する必要があります。 本書P286ページを参照してアプリケーションIDを取得し、YahooLocal.swiftの113行目に設定してください。
