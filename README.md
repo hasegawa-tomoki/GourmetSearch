@@ -21,7 +21,7 @@
 
 前述のとおり、お勧めは Xcode 6.4 と CocoaPods を使う方法です。 
 
-### Xcode 6.4 で Swift のライブラリを CocoaPods で管理する方法
+1.Xcode 6.4 で Swift のライブラリを CocoaPods で管理する方法
 
 現時点で一番おすすめの方法です。
 
@@ -32,7 +32,7 @@
 iOS8 以降サポートのアプリを開発する限り、これ以外の方法を選択するメリットはありません。
 このドキュメントの次章以降で方法を解説しています。
  
-### Xcode 6.4 で Swift のライブラリを git で管理する方法
+2.Xcode 6.4 で Swift のライブラリを git で管理する方法
 
 最新のXcodeを使用して書籍掲載の手順で学習を進める方法です。
 
@@ -43,7 +43,7 @@ iOS8 以降サポートのアプリを開発する限り、これ以外の方法
 
 詳細な手順は [NoCocoaPods.md](https://github.com/hasegawa-tomoki/GourmetSearch/blob/master/NoCocoaPods.md) を参照してください。
 
-### Xcode 6.1.1 で Swift のライブラリを git で管理する方法
+3.Xcode 6.1.1 で Swift のライブラリを git で管理する方法
 
 古いバージョンのXcodeを使用して書籍掲載の手順で学習を進める方法です。
 
