@@ -78,11 +78,12 @@ pod "SwiftyJSON", ">= 2.2"
 
 SwiftのライブラリにもCocoaPodsを使う場合、書籍を以下の様に読み替えます。
 
-* P296 「Swiftベースのライブラリの組み込み」の直前までは変更無し。
-* P296 「Swiftベースのライブラリの組み込み」からP303 「ライブラリとライセンス」の直前までは実行しない。
-* その代わりに以下の手順で Swift のライブラリを CocoaPods で追加する。
-  * ``Podfile``に上記の様に ``use_frameworks!`` 行と、Alamofire, SwiftyJSONの行を追加。
-  * ``pod install`` を実行
+* ライブラリ組込方法の変更
+  * P296 「Swiftベースのライブラリの組み込み」の直前までは変更無し。
+  * P296 「Swiftベースのライブラリの組み込み」からP303 「ライブラリとライセンス」の直前までは実行しない。
+  * その代わりに以下の手順で Swift のライブラリを CocoaPods で追加する。
+    * ``Podfile``に上記の様に ``use_frameworks!`` 行と、Alamofire, SwiftyJSONの行を追加。
+    * ``pod install`` を実行
 
 ## Swift 1.2
 
