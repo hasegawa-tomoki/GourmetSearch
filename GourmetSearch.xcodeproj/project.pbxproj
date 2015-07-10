@@ -93,8 +93,6 @@
 		E297DEC21AAC78A900674699 /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
 		E297DEC41AAC7A9500674699 /* FreewordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreewordTableViewCell.swift; sourceTree = "<group>"; };
 		E297DECC1AACA00E00674699 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
-		E2BDB9741B4EF26E00BFB0A3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GourmetSearch-hlbzhhlsxolbrwbojajsicswhmyp/Build/Products/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
-		E2BDB9751B4EF26E00BFB0A3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GourmetSearch-hlbzhhlsxolbrwbojajsicswhmyp/Build/Products/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +126,6 @@
 		55B8DC14813819EAECBA2EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2BDB9741B4EF26E00BFB0A3 /* Alamofire.framework */,
-				E2BDB9751B4EF26E00BFB0A3 /* SwiftyJSON.framework */,
 				E157B76FB20832E043FF94E7 /* libPods.a */,
 			);
 			name = Frameworks;
