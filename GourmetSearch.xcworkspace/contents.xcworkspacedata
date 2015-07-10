@@ -8,6 +8,6 @@
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Alamofire-SwiftyJSON/Alamofire-SwiftyJSON.xcodeproj">
+      location = "group:../../../../../tom/Documents/iOS/GourmetSearch/nococoapods/Alamofire-SwiftyJSON/Alamofire-SwiftyJSON.xcodeproj">
    </FileRef>
 </Workspace>
