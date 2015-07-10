@@ -7,9 +7,9 @@
 
 書籍でも解説していますが、iOS開発では基本的に最新の Xcode を使うことが要求されます。Xcoeについて、現時点では Xcode 6.4 を使用した開発をお勧めします。
 
-また、書籍執筆時点では CocoaPods が Swift ベースのライブラリに対応していなかったため、Objective-C ベースのライブラリの管理には CocoaPods を使用し、Swift ベースのライブラリの管理には ``git submodule`` を使用していました。CocoaPods はその後  Swift ベースのライブラリにも対応しています。
+また、書籍執筆時点では CocoaPods が Swift のライブラリに対応していなかったため、Objective-C のライブラリの管理には CocoaPods を使用し、Swift のライブラリの管理には ``git submodule`` を使用していました。CocoaPods はその後  Swift のライブラリにも対応しています。
 
-現時点での最適なライブラリ管理法は、Objective-C ベース、Swift ベースともに CocoaPods で管理する方法です。
+現時点での最適なライブラリ管理法は、Objective-C 、Swift ともに CocoaPods で管理する方法です。
 
 この様な理由で、現時点では、Xcode 6.4 と CocoaPods を使うのが最もお勧めの構成です。
  
