@@ -316,6 +316,8 @@
 		E297DE6E1AAB67B700674699 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Digital Circus Inc.";
 				TargetAttributes = {
