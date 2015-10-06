@@ -94,7 +94,7 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
 			// 位置情報の取得を停止
 			cllm.stopUpdatingLocation()
 			// locationsは配列なので最後の1つを使用する
-			if let location = locations.last as? CLLocation {
+			if let location = locations.last {
 				// 位置情報を乗せてNotificationを送信する
 				nsnc.postNotificationName(LSDidUpdateLocationNotification,
 					object: self,

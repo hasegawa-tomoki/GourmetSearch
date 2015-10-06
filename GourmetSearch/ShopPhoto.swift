@@ -70,9 +70,9 @@ public class ShopPhoto {
 		if shop.name == nil { return }
 		// ファイル名作成
 		let filename = NSUUID().UUIDString + ".jpg"
-		let fullpath = path.stringByAppendingPathComponent(filename)
+		let fullpath = NSURL(fileURLWithPath: path).URLByAppendingPathComponent(filename).absoluteString
 		// UIImageからJPEGデータ作成
-		let data = UIImageJPEGRepresentation(image, 0.8)
+		let data = UIImageJPEGRepresentation(image, 0.8)!
 		// データを書き込んで成功したら配列に格納して保存
 		if data.writeToFile(fullpath, atomically: true) {
 			if photos[shop.gid!] == nil {
@@ -98,7 +98,7 @@ public class ShopPhoto {
 		if index >= photos[gid]?.count { return UIImage() }
 		
 		if let filename = photos[gid]?[index] {
-			let fullpath = path.stringByAppendingPathComponent(filename)
+			let fullpath = NSURL(fileURLWithPath: path).URLByAppendingPathComponent(filename).absoluteString
 			
 			if let image = UIImage(contentsOfFile: fullpath) {
 				return image

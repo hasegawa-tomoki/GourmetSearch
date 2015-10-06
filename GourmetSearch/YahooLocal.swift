@@ -164,9 +164,9 @@ public class YahooLocalSearch {
 			// リクエストが完了した時に実行されるクロージャ
 			(request, response, data, error) -> Void in
 			
-			var json = JSON.nullJSON;
-			if error == nil && data != nil && data is NSData {
-				json = SwiftyJSON.JSON(data: data! as! NSData)
+			var json = JSON.null;
+			if error == nil && data != nil {
+				json = SwiftyJSON.JSON(data: data!)
 			}
 			
 			// エラーがあれば終了
@@ -175,8 +175,8 @@ public class YahooLocalSearch {
 				self.loading = false
 				// API実行終了を通知する
 				var message = "Unknown error."
-				if let description = error?.description {
-					message = description
+				if let error = error {
+					message = "\(error)"
 				}
 				NSNotificationCenter.defaultCenter().postNotificationName(
 					self.YLSLoadCompleteNotification,

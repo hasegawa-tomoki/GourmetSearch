@@ -48,9 +48,11 @@ class LicenseListViewController: UIViewController
 	func tableView(tableView: UITableView,
 		cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 			
-			let cell = tableView.dequeueReusableCellWithIdentifier("Software") as!	UITableViewCell
-			cell.textLabel?.text = softwares[indexPath.row].name
-			return cell
+			if let cell = tableView.dequeueReusableCellWithIdentifier("Software") {
+				cell.textLabel?.text = softwares[indexPath.row].name
+				return cell
+			}
+			return UITableViewCell()
 	}
 	
 	func tableView(tableView: UITableView,

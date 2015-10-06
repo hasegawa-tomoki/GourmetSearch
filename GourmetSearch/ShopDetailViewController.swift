@@ -29,8 +29,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 		// 写真
 		if let url = shop.photoUrl {
 			photo.sd_setImageWithURL(NSURL(string: url),
-				placeholderImage: UIImage(named: "loading"),
-				options: nil);
+				placeholderImage: UIImage(named: "loading"));
 		} else {
 			photo.image = UIImage(named: "loading")
 		}
