@@ -114,7 +114,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 		ipc.dismissViewControllerAnimated(true, completion: nil)
 	}
 	func imagePickerController(picker: UIImagePickerController,
-		didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+		didFinishPickingMediaWithInfo info: [String : AnyObject]) {
 			
 			if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
 				ShopPhoto.sharedInstance?.append(shop: shop, image: image)

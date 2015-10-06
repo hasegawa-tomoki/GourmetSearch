@@ -18,7 +18,7 @@ public struct Favorite {
 	public static func add(gid: String?){
 		if gid == nil || gid == "" { return }
 		
-		if contains(favorites, gid!) {
+		if favorites.contains((gid!)) {
 			remove(gid!)
 		}
 		favorites.append(gid!)
@@ -28,7 +28,7 @@ public struct Favorite {
 	public static func remove(gid: String?){
 		if gid == nil || gid == "" { return }
 		
-		if let index = find(favorites, gid!) {
+		if let index = favorites.indexOf((gid!)) {
 			favorites.removeAtIndex(index)
 		}
 		save()
@@ -47,7 +47,7 @@ public struct Favorite {
 	public static func inFavorites(gid: String?) -> Bool {
 		if gid == nil || gid == "" { return false }
 		
-		return contains(favorites, gid!)
+		return favorites.contains((gid!))
 	}
 	
 	public static func move(sourceIndex: Int, _ destinationIndex: Int){

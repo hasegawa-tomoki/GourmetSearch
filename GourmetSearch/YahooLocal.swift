@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-public struct Shop: Printable {
+public struct Shop: CustomStringConvertible {
 	public var gid: String? = nil
 	public var name: String? = nil
 	public var photoUrl: String? = nil

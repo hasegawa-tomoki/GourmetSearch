@@ -65,7 +65,7 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
 	// MARK: - CLLocationManagerDelegate
 	
 	// 位置情報の使用許可状態が変化した時に実行される
-	public func locationManager(manager: CLLocationManager!,
+	public func locationManager(manager: CLLocationManager,
 		didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 			
 			switch status {
@@ -88,8 +88,8 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
 	}
 	
 	// 位置情報を取得した時に実行される
-	public func locationManager(manager: CLLocationManager!,
-		didUpdateLocations locations: [AnyObject]!) {
+	public func locationManager(manager: CLLocationManager,
+		didUpdateLocations locations: [CLLocation]) {
 			
 			// 位置情報の取得を停止
 			cllm.stopUpdatingLocation()
@@ -103,8 +103,8 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
 	}
 	
 	// 位置情報の取得に失敗した時に実行される
-	public func locationManager(manager: CLLocationManager!,
-		didFailWithError error: NSError!) {
+	public func locationManager(manager: CLLocationManager,
+		didFailWithError error: NSError) {
 			
 			// 失敗Notificationを送信する
 			nsnc.postNotificationName(LSDidFailLocationNotification, object: nil)

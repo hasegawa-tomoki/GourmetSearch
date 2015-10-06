@@ -21,7 +21,7 @@ public class ShopPhoto {
 			.UserDomainMask, true)
 		// 基本的には成功するが念のため要素数をチェックしてから使う
 		if paths.count > 0 {
-			path = paths[0] as! String
+			path = paths[0] 
 		} else {
 			path = ""
 			return nil
@@ -64,7 +64,7 @@ public class ShopPhoto {
 	}
 	
 	// 写真を追加する
-	public func append(#shop: Shop, image: UIImage){
+	public func append(shop shop: Shop, image: UIImage){
 		// 店舗IDか店舗名が無ければ終わり
 		if shop.gid == nil { return }
 		if shop.name == nil { return }

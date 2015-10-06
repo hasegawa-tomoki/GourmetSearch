@@ -70,7 +70,7 @@ class ShopListViewController: UIViewController,
 				self.navigationItem.title = "お気に入り"
 			} else {
 				// 検索: 設定された検索条件から検索
-				yls.loadData(reset: true)
+				yls.loadData(true)
 				// ナビゲーションバータイトル設定
 				self.navigationItem.title = "店舗一覧"
 			}
@@ -96,10 +96,10 @@ class ShopListViewController: UIViewController,
 			// お気に入り一覧を表現する検索条件オブジェクト
 			var condition = QueryCondition()
 			// favoritesプロパティの配列の中身を「,」で結合して文字列にする
-			condition.gid = join(",", Favorite.favorites)
+			condition.gid = Favorite.favorites.joinWithSeparator(",")
 			// 検索条件を設定して検索実行
 			yls.condition = condition
-			yls.loadData(reset: true)
+			yls.loadData(true)
 		} else {
 			// お気に入りがなければ検索を実行せずAPI読込完了通知
 			NSNotificationCenter.defaultCenter().postNotificationName(
@@ -129,7 +129,7 @@ class ShopListViewController: UIViewController,
 			loadFavorites()
 		} else {
 			// 検索: そのまま再取得する
-			yls.loadData(reset: true)
+			yls.loadData(true)
 		}
 	}
 	
