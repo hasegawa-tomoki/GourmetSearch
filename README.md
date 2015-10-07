@@ -9,57 +9,71 @@
 
 ## はじめに
 
-2015年7月現在の Xcode 最新版、Xcode 6.4 では搭載されるSwiftのバージョンが 1.2 となり、書籍掲載の 1.1 とは若干文法が変更されました。
+書籍の記述は Xcode 6.3 を前提としています。このバージョンには Swift 1.1 が搭載されていました。
 
-書籍でも解説していますが、iOS開発では基本的に最新の Xcode を使うことが要求されます。Xcodeについて、現時点では Xcode 6.4 を使用した開発をお勧めします。
+その後、Swift のバージョンは2015年7月の Xcode 6.4 で Swift 1.2 に、2015年9月の Xcode 7 で Swift 2.0 に更新されました。また、Xcode 7 と同時に iOS 9 がリリースされています。
 
-また、書籍執筆時点では CocoaPods が Swift のライブラリに対応していなかったため、Objective-C のライブラリの管理には CocoaPods を使用し、Swift のライブラリの管理には ``git submodule`` を使用していました。CocoaPods はその後  Swift のライブラリにも対応しています。
+書籍でも解説していますが、iOS開発では基本的に最新の Xcode を使うことが要求されます。そのため、Xcodeについて、現時点では Xcode 7 を使用した開発をお勧めします。
+
+このリポジトリの master ブランチには最新の Xcode 7 + iOS 9 でアプリを開発する場合のソースコードを置いています。
+
+また、このリポジトリは以下のブランチを含みます。推奨はしませんが必要に応じて使い分けてください。各ブランチの詳細は後述します。
+
+* master
+* swift12
+* swift11
+* no-cocoapods
+
+## CocoaPods の使用
+
+書籍執筆時点では CocoaPods が Swift のライブラリに対応していなかったため、Objective-C のライブラリの管理には CocoaPods を使用し、Swift のライブラリの管理には ``git submodule`` を使用していました。CocoaPods はその後  Swift のライブラリにも対応しています。
 
 現時点での最適なライブラリ管理法は、Objective-C 、Swift ともに CocoaPods で管理する方法です。
 
-この様な理由で、現時点では、Xcode 6.4 と CocoaPods を使うのが最もお勧めの構成です。
+この様な理由で、現時点では、Xcode 7 と CocoaPods を使うのが最もお勧めの構成です。この構成を前提としたソースコードはこのリポジトリの master ブランチです。
  
-## 3つの手順
+## 各ブランチの詳細
 
-ここでは3つの方法での ``GourmetSearch`` アプリ開発をサポート・解説しています。
+前述のとおり、このリポジトリは4つのブランチを含みます。
+各ブランチの内容は以下のとおりです。
+前述のとおり、お勧めは Xcode 7 を使う方法です。
 
-どの方法も書籍中の前提と同様に iOS8 以降をサポートするアプリの開発が可能です。
+### master
 
-前述のとおり、お勧めは Xcode 6.4 と CocoaPods を使う方法です。 
+Xcode 7 + Swift 2.0 で対象OSを iOS 8 & iOS 9 とする方法です。
 
-1.Xcode 6.4 で Swift のライブラリを CocoaPods で管理する方法
-
-現時点で一番おすすめの方法です。
-
-* 2015年7月現在もっとも標準的な構成です。
+* 2015年10月現在もっとも標準的な構成です。
 * ライブラリを CocoaPods で管理するため、Xcode 上での複雑な設定が不要です。
-* 最新の Xcode に内蔵される Swift が Swift 1.2 のため、書籍掲載のプログラムに若干の修正が必要です。
- 
-iOS8 以降サポートのアプリを開発する限り、これ以外の方法を選択するメリットはありません。
-このドキュメントの次章以降で方法を解説しています。
- 
-2.Xcode 6.4 で Swift のライブラリを git で管理する方法
+* Swift のライブラリを CocoaPods で管理する方法は後述します。
+* Swift が Swift 2.0 であることと、iOS 9 をサポートするため、書籍掲載のプログラムに修正が必要です。
 
-最新のXcodeを使用して書籍掲載の手順で学習を進める方法です。
+iOS 8 以降サポートのアプリを開発する限り、この方法を強くお勧めします。
 
-* ライブラリ組み込みを書籍のままの手順で進めることができます。
-* 最新の Xcode に内蔵される Swift が Swift 1.2 のため、書籍掲載のプログラムに若干の修正が必要です。
 
-現時点でこの方法を選択するメリットは無く、1.の方法を使用することをお勧めします。
+### swift12
 
-詳細な手順は [NoCocoaPods.md](https://github.com/hasegawa-tomoki/GourmetSearch/blob/master/NoCocoaPods.md) を参照してください。
+Xcode 6.4 + Swift 1.2 で Swift のライブラリを CocoaPods で管理する方法です。
 
-3.Xcode 6.1.1 で Swift のライブラリを git で管理する方法
+紙面のソースコードからの乖離が少なめで済むメリットがありますが、
 
-古いバージョンのXcodeを使用して書籍掲載の手順で学習を進める方法です。
+ライブラリについても Swift 1.2 対応のものを探す必要があるなどデメリットも大きくあまり現実的ではないでしょう。
 
-* ライブラリ組み込みやソースコードを書籍のままの手順で進めることができます。
-* この方法で使用する Swift のバージョンは 1.1 です。
-* 多くのオープンソースライブラリではメインのサポートが Swift 1.2 に移行しており、Swift 1.1 の更新は積極的には行われません。
 
-現時点でこの方法を選択するメリットは無く、1.の方法を使用することをお勧めします。
+### no-cocoapods
 
-詳細な手順は [Swift11.md](https://github.com/hasegawa-tomoki/GourmetSearch/blob/master/Swift11.md) を参照してください。
+Xcode 6.4 + Swift 1.2 で Swift のライブラリを紙面の解説どおり Git で管理する方法です。
+本書の前提ではライブラリの管理に CocoaPods を使用しないメリットは無く、現状この構成を選ぶメリットありません。
+
+詳細な手順は [NoCocoaPods.md](https://github.com/hasegawa-tomoki/GourmetSearch/blob/master/NoCocoaPods.md)  にあります。
+
+### swift11
+
+Xcode 6.3 + Swift 1.1 で Swift のライブラリを紙面の解説どおり Git で管理する方法です。
+
+ソースコードは紙面のままとなりますが、 no-cocoapods ブランチ同様、ライブラリの管理に CocoaPods を使用しないメリットは無く、現状この構成を選ぶメリットありません。
+
+詳細な手順は [Swift11.md](https://github.com/hasegawa-tomoki/GourmetSearch/blob/master/Swift11.md) にあります。
+
 
 
 ## Swift のライブラリを CocoaPods で管理する方法
@@ -74,11 +88,12 @@ platform :ios, '8.0'
 use_frameworks!
 
 pod 'SDWebImage'
-pod 'Alamofire', '~> 1.2'
-pod "SwiftyJSON", ">= 2.2"
+pod 'Alamofire', '~> 2.0'
+pod "SwiftyJSON", "~> 2.3"
 ```
 
-なお、Alamofire-SwiftyJSON がCocoaPods対応していないため、Alamofire-SwiftyJSON を使用しない形に変更する必要があります。詳細は書籍のP349 リスト06-12を参照してください。
+なお、Alamofire-SwiftyJSON が CocoaPods 対応していないため、Alamofire-SwiftyJSON を使用しない形に変更する必要があります。詳細は書籍のP349 リスト06-12を参照してください。
+
 
 ## 書籍の手順変更
 
@@ -92,15 +107,49 @@ SwiftのライブラリにもCocoaPodsを使う場合、書籍を以下の様に
     * ``pod install`` を実行
 * Alamofire-SwiftyJSON が CocoaPods に対応していないため、P349を参考に Alamofire-SwiftyJSON を使わない形で Alamofire を使用する。
 
-## Swift 1.2
+## 仕様変更による影響
 
-P173の記述の通り、Xcode 6.4 に内蔵されている Swift 1.2 では Swift 1.1 で利用していた``as``によるダウンキャストは``as!``と表記する必要があります。
+### Swift 1.2
+
+P173の記述の通り、Xcode 6.4 に搭載されている Swift 1.2 では Swift 1.1 で利用していた``as``によるダウンキャストは``as!``と表記する必要があります。
 
 書籍の通りにプログラムを入力するとXcodeのエラーが以下の様に表示されます。
 
 ``'AnyObject?' is not convertible to '〜'; did you mean to use 'as!' to force downcast?``
 
 このとき、指摘の通りに ``as`` → ``as!`` と変更することで Swift 1.2 で実行可能です。
+
+### Swift 2.0
+
+Xcode 7 に搭載されている Swift 2.0 ではいくつかのグローバル変数がメソッド化されており、以下の様に変更する必要があります。
+
+|Swift 1.2|Swift 2.0|
+|:--------|:--------|
+|contains(heystack, needle)|heystack.contains(needle)|
+|find(heystack, needle)|heystack.indexOf(needle)|
+|join(",", array)|array.joinWithSeparator(",")|
+
+
+### iOS 9
+
+GourmetSearch アプリを iOS 9 を前提としてコンパイルするためにはいくつかの修正が必要です。
+
+#### APIの変更
+
+iOS 9 ではいくつかのAPI（デリゲートメソッドなど）の定義が変わっており、プログラムに少し修正をする必要があります。
+
+この変更の多くは`Optional`型で渡されていたパラメタが非`Optional`型で渡される様になった、という変更です。
+
+興味がある方は c1e46d82b650e674d37e770758188eb1ff65e2fa を参照してください。
+
+#### ATS対応
+
+iOS 9 では App Transport Security （ATS）という機能が導入され、一定のセキュアな接続以外の外部へのネットワーク接続は拒否される様になりました。
+
+本来的には、全ての接続をセキュアにするか、どうしてもセキュアな接続に出来ない箇所について例外を定義して対応することになりますが、本リポジトリのサンプルではATSを無効にすることで外部へのネットワーク接続を許可しています。
+
+本書の内容を学習し終わり、本格的にご自身のアプリを作成する際にはATSの動作をネットなどで学習し、しかるべき対応をしてください。
+
 
 ## このサンプルソースのコンパイル手順
 
